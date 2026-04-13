@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" seed="400" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#f2ead8"/>
+  
+  <g filter="url(#painted)">
+    <!-- The enso - single incomplete circle -->
+    <!-- Starts thick at bottom-left, sweeps up and around, thins and trails off near the top -->
+    <!-- Using a path with varying stroke to simulate brush pressure -->
+    
+    <!-- Main stroke - thick body -->
+    <path d="M 1100 800 
+             C 800 820 550 1000 450 1300 
+             C 350 1600 400 1950 550 2200 
+             C 700 2450 1000 2600 1300 2600 
+             C 1600 2600 1850 2450 2000 2200 
+             C 2150 1950 2150 1600 2050 1300 
+             C 1950 1050 1750 880 1500 820" 
+          fill="none" stroke="#1a1810" stroke-width="65" opacity="0.8" stroke-linecap="round"/>
+    
+    <!-- Slightly thinner inner edge for depth -->
+    <path d="M 1100 800 
+             C 800 820 550 1000 450 1300 
+             C 350 1600 400 1950 550 2200 
+             C 700 2450 1000 2600 1300 2600 
+             C 1600 2600 1850 2450 2000 2200 
+             C 2150 1950 2150 1600 2050 1300 
+             C 1950 1050 1750 880 1500 820" 
+          fill="none" stroke="#282518" stroke-width="40" opacity="0.3" stroke-linecap="round"/>
+    
+    <!-- Thinner trailing end at the gap - the brush lifting -->
+    <path d="M 1500 820 C 1450 810 1380 805 1300 800" 
+          fill="none" stroke="#1a1810" stroke-width="35" opacity="0.5" stroke-linecap="round"/>
+    
+    <!-- Dry brush texture at the trailing end -->
+    <path d="M 1300 800 C 1250 798 1200 800 1150 805" 
+          fill="none" stroke="#1a1810" stroke-width="20" opacity="0.25" stroke-linecap="round"/>
+    
+    <path d="M 1150 805 C 1120 808 1100 810 1090 812" 
+          fill="none" stroke="#1a1810" stroke-width="10" opacity="0.15" stroke-linecap="round"/>
+    
+    <!-- Thick start point - where the brush first touches -->
+    <path d="M 1100 800 C 1090 810 1085 825 1090 840" 
+          fill="none" stroke="#1a1810" stroke-width="70" opacity="0.6" stroke-linecap="round"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.2"/>
+</svg>

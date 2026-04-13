@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="3" seed="130" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="auroraBlur">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="60%" stop-color="#0a1018"/>
+      <stop offset="100%" stop-color="#0c1420"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#nightSky)"/>
+  
+  <!-- Aurora curtains - vertical flowing bands -->
+  <g filter="url(#painted)">
+    <!-- Green curtains - main aurora -->
+    <path d="M 300 200 Q 320 600 280 1000 Q 260 1400 310 1800" stroke="#20c060" stroke-width="60" fill="none" opacity="0.08" filter="url(#auroraBlur)"/>
+    <path d="M 500 150 Q 480 550 520 950 Q 540 1350 490 1750" stroke="#30d870" stroke-width="80" fill="none" opacity="0.1" filter="url(#auroraBlur)"/>
+    <path d="M 700 100 Q 730 500 690 900 Q 670 1300 720 1700" stroke="#28d068" stroke-width="100" fill="none" opacity="0.12" filter="url(#auroraBlur)"/>
+    <path d="M 900 80 Q 880 480 920 880 Q 940 1280 890 1680" stroke="#20c860" stroke-width="110" fill="none" opacity="0.14" filter="url(#auroraBlur)"/>
+    <path d="M 1100 60 Q 1130 460 1090 860 Q 1070 1260 1120 1660" stroke="#30e070" stroke-width="120" fill="none" opacity="0.15" filter="url(#auroraBlur)"/>
+    <path d="M 1300 80 Q 1280 480 1320 880 Q 1340 1280 1290 1680" stroke="#28d868" stroke-width="110" fill="none" opacity="0.13" filter="url(#auroraBlur)"/>
+    <path d="M 1500 120 Q 1530 520 1490 920 Q 1470 1320 1520 1720" stroke="#20c060" stroke-width="90" fill="none" opacity="0.11" filter="url(#auroraBlur)"/>
+    <path d="M 1700 180 Q 1680 580 1720 980 Q 1740 1380 1690 1780" stroke="#30d070" stroke-width="70" fill="none" opacity="0.09" filter="url(#auroraBlur)"/>
+    <path d="M 1900 250 Q 1920 650 1880 1050 Q 1860 1450 1910 1850" stroke="#28c868" stroke-width="55" fill="none" opacity="0.07" filter="url(#auroraBlur)"/>
+    
+    <!-- Purple/magenta highlights at top -->
+    <path d="M 600 50 Q 620 250 580 450 Q 560 650 610 850" stroke="#8040a0" stroke-width="50" fill="none" opacity="0.08" filter="url(#auroraBlur)"/>
+    <path d="M 900 30 Q 880 230 920 430 Q 940 630 890 830" stroke="#9050b0" stroke-width="60" fill="none" opacity="0.09" filter="url(#auroraBlur)"/>
+    <path d="M 1200 20 Q 1230 220 1190 420 Q 1170 620 1220 820" stroke="#8848a8" stroke-width="70" fill="none" opacity="0.1" filter="url(#auroraBlur)"/>
+    <path d="M 1500 40 Q 1480 240 1520 440 Q 1540 640 1490 840" stroke="#8040a0" stroke-width="55" fill="none" opacity="0.08" filter="url(#auroraBlur)"/>
+    
+    <!-- Brighter core lines - thin, sharper -->
+    <path d="M 700 100 Q 730 500 690 900 Q 670 1300 720 1600" stroke="#40e880" stroke-width="4" fill="none" opacity="0.2"/>
+    <path d="M 900 80 Q 880 480 920 880 Q 940 1280 890 1580" stroke="#48f088" stroke-width="5" fill="none" opacity="0.22"/>
+    <path d="M 1100 60 Q 1130 460 1090 860 Q 1070 1260 1120 1560" stroke="#40e880" stroke-width="6" fill="none" opacity="0.25"/>
+    <path d="M 1300 80 Q 1280 480 1320 880 Q 1340 1280 1290 1580" stroke="#48f088" stroke-width="5" fill="none" opacity="0.22"/>
+    <path d="M 1500 120 Q 1530 520 1490 920 Q 1470 1320 1520 1600" stroke="#40e880" stroke-width="4" fill="none" opacity="0.18"/>
+  </g>
+  
+  <!-- Reflection on water/snow -->
+  <g filter="url(#painted)" opacity="0.4">
+    <path d="M 300 2500 Q 320 2300 280 2100" stroke="#20c060" stroke-width="30" fill="none" opacity="0.06" filter="url(#auroraBlur)"/>
+    <path d="M 700 2500 Q 730 2300 690 2100" stroke="#28d068" stroke-width="40" fill="none" opacity="0.07" filter="url(#auroraBlur)"/>
+    <path d="M 1100 2500 Q 1130 2300 1090 2100" stroke="#30e070" stroke-width="50" fill="none" opacity="0.08" filter="url(#auroraBlur)"/>
+    <path d="M 1500 2500 Q 1480 2300 1520 2100" stroke="#28d068" stroke-width="40" fill="none" opacity="0.07" filter="url(#auroraBlur)"/>
+    <path d="M 1900 2500 Q 1920 2300 1880 2100" stroke="#20c060" stroke-width="30" fill="none" opacity="0.06" filter="url(#auroraBlur)"/>
+  </g>
+  
+  <!-- Landscape silhouette -->
+  <g filter="url(#painted)">
+    <path d="M -100 2200 L 200 2000 L 400 2080 L 600 1950 L 800 2050 L 1000 1900 L 1200 2000 L 1400 1920 L 1600 2020 L 1800 1880 L 2000 1980 L 2200 1900 L 2500 2050 L 2500 2300 L -100 2300 Z" 
+          fill="#0a1018" opacity="0.95"/>
+    <!-- Tree line -->
+    <path d="M -100 2150 L 100 2050 L 120 1980 L 140 2050 L 200 2000 L 250 2080 L 270 2010 L 290 2080 L 350 2030 L 400 2100 L 420 2020 L 440 2100 L 500 2050 L 550 2120 L 570 2040 L 590 2120 L 650 2070 L 700 2130 L 730 2060 L 760 2130 L 2500 2200 L 2500 2300 L -100 2300 Z" 
+          fill="#060a10" opacity="0.9"/>
+  </g>
+  
+  <!-- Ground/snow -->
+  <rect x="-100" y="2250" width="2600" height="1000" fill="#080c14" opacity="0.95"/>
+  
+  <!-- Stars -->
+  <circle cx="200" cy="300" r="2.5" fill="#d0d8f0" opacity="0.55"/>
+  <circle cx="2100" cy="250" r="3" fill="#d0d8f0" opacity="0.6"/>
+  <circle cx="400" cy="150" r="2" fill="#d0d8f0" opacity="0.4"/>
+  <circle cx="1800" cy="100" r="2" fill="#d0d8f0" opacity="0.45"/>
+  <circle cx="2300" cy="500" r="2" fill="#d0d8f0" opacity="0.35"/>
+  <circle cx="100" cy="700" r="1.5" fill="#d0d8f0" opacity="0.3"/>
+  <circle cx="2200" cy="800" r="2" fill="#d0d8f0" opacity="0.3"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

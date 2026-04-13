@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="55" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <radialGradient id="chartGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#182038" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0c1020" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background - deep navy -->
+  <rect width="2400" height="3200" fill="url(#chartGlow)"/>
+  
+  <!-- Circular chart border -->
+  <circle cx="1200" cy="1600" r="1100" fill="none" stroke="#384870" stroke-width="2" opacity="0.5"/>
+  <circle cx="1200" cy="1600" r="1090" fill="none" stroke="#384870" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Grid lines - subtle curved grid -->
+  <circle cx="1200" cy="1600" r="800" fill="none" stroke="#283858" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="1200" cy="1600" r="550" fill="none" stroke="#283858" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="1200" cy="1600" r="300" fill="none" stroke="#283858" stroke-width="0.8" opacity="0.3"/>
+  <line x1="1200" y1="500" x2="1200" y2="2700" stroke="#283858" stroke-width="0.8" opacity="0.25"/>
+  <line x1="100" y1="1600" x2="2300" y2="1600" stroke="#283858" stroke-width="0.8" opacity="0.25"/>
+  <line x1="420" y1="820" x2="1980" y2="2380" stroke="#283858" stroke-width="0.8" opacity="0.2"/>
+  <line x1="1980" y1="820" x2="420" y2="2380" stroke="#283858" stroke-width="0.8" opacity="0.2"/>
+  
+  <!-- Constellation 1 - Orion-like figure, upper left -->
+  <g filter="url(#painted)">
+    <!-- Connection lines -->
+    <line x1="500" y1="800" x2="620" y2="950" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="620" y1="950" x2="580" y2="1150" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="580" y1="1150" x2="500" y2="1300" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="620" y1="950" x2="750" y2="1050" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="750" y1="1050" x2="700" y2="1200" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="700" y1="1200" x2="800" y2="1350" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <!-- Belt -->
+    <line x1="580" y1="1150" x2="650" y2="1130" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="650" y1="1130" x2="700" y2="1200" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <!-- Stars -->
+    <circle cx="500" cy="800" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="620" cy="950" r="6" fill="#e8d8c0" filter="url(#starGlow)"/>
+    <circle cx="750" cy="1050" r="5.5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="580" cy="1150" r="4" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="650" cy="1130" r="3.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="700" cy="1200" r="4" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="500" cy="1300" r="5" fill="#c8d0e8" filter="url(#starGlow)"/>
+    <circle cx="800" cy="1350" r="5.5" fill="#c8d0e8" filter="url(#starGlow)"/>
+  </g>
+  
+  <!-- Constellation 2 - Cassiopeia W shape, upper right -->
+  <g filter="url(#painted)">
+    <line x1="1550" y1="750" x2="1650" y2="900" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1650" y1="900" x2="1750" y2="780" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1750" y1="780" x2="1850" y2="920" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1850" y1="920" x2="1950" y2="800" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="1550" cy="750" r="5" fill="#e8d8c0" filter="url(#starGlow)"/>
+    <circle cx="1650" cy="900" r="4.5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1750" cy="780" r="6" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="1850" cy="920" r="4.5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1950" cy="800" r="5" fill="#e8d8c0" filter="url(#starGlow)"/>
+  </g>
+  
+  <!-- Constellation 3 - Big Dipper, center -->
+  <g filter="url(#painted)">
+    <line x1="900" y1="1500" x2="1050" y2="1480" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1050" y1="1480" x2="1100" y2="1600" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1100" y1="1600" x2="950" y2="1650" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="950" y1="1650" x2="900" y2="1500" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <!-- Handle -->
+    <line x1="1050" y1="1480" x2="1200" y2="1420" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1200" y1="1420" x2="1350" y2="1450" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1350" y1="1450" x2="1480" y2="1500" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="900" cy="1500" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1050" cy="1480" r="5.5" fill="#e8d8c0" filter="url(#starGlow)"/>
+    <circle cx="1100" cy="1600" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="950" cy="1650" r="4.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="1200" cy="1420" r="6" fill="#e8d8c0" filter="url(#starGlow)"/>
+    <circle cx="1350" cy="1450" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1480" cy="1500" r="5.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+  </g>
+  
+  <!-- Constellation 4 - Scorpius-like, lower area -->
+  <g filter="url(#painted)">
+    <line x1="1400" y1="1900" x2="1500" y2="1950" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1500" y1="1950" x2="1600" y2="1980" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1600" y1="1980" x2="1700" y2="2050" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1700" y1="2050" x2="1750" y2="2180" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1750" y1="2180" x2="1700" y2="2300" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1700" y1="2300" x2="1780" y2="2350" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1700" y1="2300" x2="1620" y2="2370" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="1400" cy="1900" r="7" fill="#e8a880" filter="url(#starGlow)"/>
+    <circle cx="1500" cy="1950" r="4.5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1600" cy="1980" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1700" cy="2050" r="4" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="1750" cy="2180" r="4.5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1700" cy="2300" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="1780" cy="2350" r="3.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="1620" cy="2370" r="3.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+  </g>
+  
+  <!-- Constellation 5 - small triangle, lower left -->
+  <g filter="url(#painted)">
+    <line x1="400" y1="2100" x2="550" y2="2000" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="550" y1="2000" x2="600" y2="2200" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <line x1="600" y1="2200" x2="400" y2="2100" stroke="#506888" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="400" cy="2100" r="5" fill="#d0c8e8" filter="url(#starGlow)"/>
+    <circle cx="550" cy="2000" r="4.5" fill="#e0d8f0" filter="url(#starGlow)"/>
+    <circle cx="600" cy="2200" r="5.5" fill="#c8d8e8" filter="url(#starGlow)"/>
+  </g>
+  
+  <!-- Scattered background stars -->
+  <circle cx="300" cy="550" r="1.5" fill="#8890a8" opacity="0.4"/>
+  <circle cx="1300" cy="650" r="2" fill="#8890a8" opacity="0.35"/>
+  <circle cx="1900" cy="1200" r="1.5" fill="#8890a8" opacity="0.3"/>
+  <circle cx="350" cy="1700" r="2" fill="#8890a8" opacity="0.35"/>
+  <circle cx="800" cy="2300" r="1.5" fill="#8890a8" opacity="0.3"/>
+  <circle cx="1100" cy="2500" r="2" fill="#8890a8" opacity="0.35"/>
+  <circle cx="2000" cy="2600" r="1.5" fill="#8890a8" opacity="0.3"/>
+  <circle cx="450" cy="2500" r="1.5" fill="#8890a8" opacity="0.35"/>
+  <circle cx="1800" cy="1700" r="2" fill="#8890a8" opacity="0.3"/>
+  <circle cx="700" cy="1900" r="1.5" fill="#8890a8" opacity="0.35"/>
+  <circle cx="1600" cy="1200" r="2" fill="#8890a8" opacity="0.3"/>
+  <circle cx="250" cy="900" r="1.5" fill="#8890a8" opacity="0.35"/>
+  <circle cx="2100" cy="1500" r="1.5" fill="#8890a8" opacity="0.3"/>
+  
+  <!-- Milky way band - subtle diagonal wash -->
+  <rect x="0" y="0" width="2400" height="3200" fill="none"/>
+  <path d="M 0 800 Q 600 1200 1200 1400 Q 1800 1600 2400 2000" stroke="#283048" stroke-width="400" opacity="0.15" fill="none" stroke-linecap="round"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.2"/>
+</svg>

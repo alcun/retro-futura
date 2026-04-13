@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="260" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="jungleBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8d080"/>
+      <stop offset="30%" stop-color="#60a040"/>
+      <stop offset="100%" stop-color="#0c2008"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#jungleBg)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Palm fronds hanging down from top - big sweeping arcs -->
+    <!-- Layer 1 - lightest, top canopy -->
+    <g stroke="#80c050" fill="none" stroke-linecap="round" opacity="0.3">
+      <path d="M 400 0 C 350 150 200 350 100 500" stroke-width="6"/>
+      <path d="M 400 0 C 450 180 550 400 600 550" stroke-width="5"/>
+      <path d="M 400 0 C 380 200 320 450 280 600" stroke-width="4.5"/>
+      
+      <path d="M 1200 0 C 1150 180 1050 380 950 520" stroke-width="5.5"/>
+      <path d="M 1200 0 C 1250 200 1350 420 1450 560" stroke-width="5"/>
+      <path d="M 1200 0 C 1180 180 1120 400 1080 550" stroke-width="4"/>
+      
+      <path d="M 2000 0 C 1950 150 1850 350 1750 480" stroke-width="6"/>
+      <path d="M 2000 0 C 2050 180 2150 380 2250 510" stroke-width="5"/>
+      <path d="M 2000 0 C 1980 200 1920 420 1880 560" stroke-width="4.5"/>
+    </g>
+    
+    <!-- Layer 2 - monstera/large leaf shapes -->
+    <g stroke="#60a838" fill="none" stroke-linecap="round" opacity="0.35">
+      <path d="M 700 200 C 650 400 500 650 400 800" stroke-width="7"/>
+      <path d="M 700 200 C 750 420 850 680 900 830" stroke-width="6"/>
+      <path d="M 700 200 C 680 400 640 650 620 800" stroke-width="5"/>
+      
+      <path d="M 1700 150 C 1650 350 1550 600 1450 750" stroke-width="6.5"/>
+      <path d="M 1700 150 C 1750 380 1850 630 1950 780" stroke-width="6"/>
+      <path d="M 1700 150 C 1680 370 1640 620 1620 770" stroke-width="5"/>
+    </g>
+    
+    <!-- Layer 3 - denser, darker -->
+    <g stroke="#489028" fill="none" stroke-linecap="round" opacity="0.4">
+      <path d="M 200 500 C 150 750 50 1050 -50 1250" stroke-width="8"/>
+      <path d="M 200 500 C 250 780 350 1080 450 1280" stroke-width="7"/>
+      <path d="M 200 500 C 180 780 120 1080 80 1280" stroke-width="5.5"/>
+      
+      <path d="M 1000 450 C 950 700 850 1000 750 1200" stroke-width="7.5"/>
+      <path d="M 1000 450 C 1050 720 1150 1020 1250 1220" stroke-width="7"/>
+      <path d="M 1000 450 C 980 720 920 1020 880 1220" stroke-width="5.5"/>
+      
+      <path d="M 1900 400 C 1850 650 1750 950 1650 1150" stroke-width="7"/>
+      <path d="M 1900 400 C 1950 670 2050 970 2150 1170" stroke-width="6.5"/>
+      <path d="M 1900 400 C 1880 670 1820 970 1780 1170" stroke-width="5"/>
+    </g>
+    
+    <!-- Layer 4 - mid canopy, getting dark -->
+    <g stroke="#387820" fill="none" stroke-linecap="round" opacity="0.45">
+      <path d="M 500 900 C 450 1150 350 1450 250 1650" stroke-width="8.5"/>
+      <path d="M 500 900 C 550 1180 650 1480 750 1680" stroke-width="8"/>
+      <path d="M 500 900 C 480 1180 420 1480 380 1680" stroke-width="6"/>
+      
+      <path d="M 1400 850 C 1350 1100 1250 1400 1150 1600" stroke-width="8"/>
+      <path d="M 1400 850 C 1450 1130 1550 1430 1650 1630" stroke-width="7.5"/>
+      <path d="M 1400 850 C 1380 1130 1320 1430 1280 1630" stroke-width="6"/>
+      
+      <path d="M 2200 800 C 2150 1050 2050 1350 1950 1550" stroke-width="7.5"/>
+      <path d="M 2200 800 C 2250 1080 2350 1380 2450 1580" stroke-width="7"/>
+    </g>
+    
+    <!-- Layer 5 - lower, darker -->
+    <g stroke="#286818" fill="none" stroke-linecap="round" opacity="0.5">
+      <path d="M 100 1400 C 50 1650 -50 1950 -100 2150" stroke-width="9"/>
+      <path d="M 100 1400 C 150 1680 250 1980 350 2180" stroke-width="8.5"/>
+      
+      <path d="M 800 1350 C 750 1600 650 1900 550 2100" stroke-width="8.5"/>
+      <path d="M 800 1350 C 850 1630 950 1930 1050 2130" stroke-width="8"/>
+      
+      <path d="M 1600 1300 C 1550 1550 1450 1850 1350 2050" stroke-width="9"/>
+      <path d="M 1600 1300 C 1650 1580 1750 1880 1850 2080" stroke-width="8.5"/>
+      
+      <path d="M 2300 1350 C 2250 1600 2150 1900 2050 2100" stroke-width="8"/>
+      <path d="M 2300 1350 C 2350 1630 2450 1930 2500 2100" stroke-width="7.5"/>
+    </g>
+    
+    <!-- Layer 6 - deep undergrowth -->
+    <g stroke="#1c5010" fill="none" stroke-linecap="round" opacity="0.5">
+      <path d="M 400 1900 C 350 2150 250 2450 150 2650" stroke-width="10"/>
+      <path d="M 400 1900 C 450 2180 550 2480 650 2680" stroke-width="9.5"/>
+      
+      <path d="M 1100 1850 C 1050 2100 950 2400 850 2600" stroke-width="9.5"/>
+      <path d="M 1100 1850 C 1150 2130 1250 2430 1350 2630" stroke-width="9"/>
+      
+      <path d="M 1900 1800 C 1850 2050 1750 2350 1650 2550" stroke-width="9"/>
+      <path d="M 1900 1800 C 1950 2080 2050 2380 2150 2580" stroke-width="8.5"/>
+    </g>
+    
+    <!-- Layer 7 - forest floor darkness -->
+    <g stroke="#103808" fill="none" stroke-linecap="round" opacity="0.5">
+      <path d="M 200 2500 C 150 2750 100 3000 50 3200" stroke-width="11"/>
+      <path d="M 200 2500 C 250 2780 350 3050 400 3200" stroke-width="10"/>
+      
+      <path d="M 800 2450 C 750 2700 650 3000 600 3200" stroke-width="10"/>
+      <path d="M 800 2450 C 850 2730 950 3030 1050 3200" stroke-width="9.5"/>
+      
+      <path d="M 1500 2400 C 1450 2650 1350 2950 1300 3200" stroke-width="10.5"/>
+      <path d="M 1500 2400 C 1550 2680 1650 2980 1750 3200" stroke-width="10"/>
+      
+      <path d="M 2100 2450 C 2050 2700 1950 3000 1900 3200" stroke-width="9.5"/>
+      <path d="M 2100 2450 C 2150 2730 2250 3030 2350 3200" stroke-width="9"/>
+    </g>
+  </g>
+  
+  <!-- Light rays filtering through -->
+  <circle cx="500" cy="350" r="5" fill="#d0f0a0" opacity="0.1"/>
+  <circle cx="1150" cy="280" r="4" fill="#d0f0a0" opacity="0.08"/>
+  <circle cx="1750" cy="320" r="5" fill="#d0f0a0" opacity="0.09"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>

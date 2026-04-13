@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="300" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="coreGlow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="novaGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#f0e0c0" stop-opacity="0.15"/>
+      <stop offset="30%" stop-color="#8060a0" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#080010" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#06000c"/>
+  <rect width="2400" height="3200" fill="url(#novaGlow)"/>
+  
+  <!-- Stars -->
+  <circle cx="200" cy="200" r="2" fill="#d0c8e0" opacity="0.5"/>
+  <circle cx="700" cy="350" r="1.5" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="1800" cy="150" r="2.5" fill="#d0c8e0" opacity="0.5"/>
+  <circle cx="2200" cy="400" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="400" cy="2800" r="2" fill="#d0c8e0" opacity="0.45"/>
+  <circle cx="1600" cy="2900" r="1.5" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="2100" cy="2700" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="300" cy="1800" r="1.5" fill="#d0c8e0" opacity="0.3"/>
+  <circle cx="2300" cy="1500" r="2" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="500" cy="600" r="1.5" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="1900" cy="600" r="2" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="100" cy="1200" r="1.5" fill="#d0c8e0" opacity="0.3"/>
+  
+  <!-- Shockwave rings - expanding outward, getting fainter -->
+  <g filter="url(#painted)">
+    <!-- Outermost rings - faint purple/blue -->
+    <circle cx="1200" cy="1300" r="1100" fill="none" stroke="#382050" stroke-width="12" opacity="0.15"/>
+    <circle cx="1200" cy="1300" r="1000" fill="none" stroke="#402858" stroke-width="10" opacity="0.18"/>
+    <circle cx="1200" cy="1300" r="900" fill="none" stroke="#483060" stroke-width="14" opacity="0.2"/>
+    <circle cx="1200" cy="1300" r="800" fill="none" stroke="#503868" stroke-width="9" opacity="0.22"/>
+    <circle cx="1200" cy="1300" r="700" fill="none" stroke="#584070" stroke-width="12" opacity="0.25"/>
+    
+    <!-- Mid rings - warmer, brighter -->
+    <circle cx="1200" cy="1300" r="600" fill="none" stroke="#685080" stroke-width="8" opacity="0.28"/>
+    <circle cx="1200" cy="1300" r="510" fill="none" stroke="#806088" stroke-width="11" opacity="0.3"/>
+    <circle cx="1200" cy="1300" r="430" fill="none" stroke="#987090" stroke-width="7" opacity="0.32"/>
+    <circle cx="1200" cy="1300" r="360" fill="none" stroke="#b08098" stroke-width="10" opacity="0.35"/>
+    
+    <!-- Inner rings - hot, orange/yellow -->
+    <circle cx="1200" cy="1300" r="290" fill="none" stroke="#c89080" stroke-width="6" opacity="0.38"/>
+    <circle cx="1200" cy="1300" r="235" fill="none" stroke="#d8a070" stroke-width="9" opacity="0.4"/>
+    <circle cx="1200" cy="1300" r="185" fill="none" stroke="#e8b060" stroke-width="5.5" opacity="0.42"/>
+    <circle cx="1200" cy="1300" r="145" fill="none" stroke="#f0c050" stroke-width="8" opacity="0.45"/>
+    
+    <!-- Core rings - white hot -->
+    <circle cx="1200" cy="1300" r="110" fill="none" stroke="#f8d848" stroke-width="4.5" opacity="0.5"/>
+    <circle cx="1200" cy="1300" r="80" fill="none" stroke="#ffe848" stroke-width="7" opacity="0.5"/>
+    <circle cx="1200" cy="1300" r="55" fill="none" stroke="#fff0a0" stroke-width="3.5" opacity="0.55"/>
+  </g>
+  
+  <!-- Central explosion - bright core -->
+  <circle cx="1200" cy="1300" r="35" fill="#fff8e0" opacity="0.6" filter="url(#coreGlow)"/>
+  <circle cx="1200" cy="1300" r="20" fill="#ffffff" opacity="0.7"/>
+  <circle cx="1200" cy="1300" r="10" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Ejecta streaks - fast-moving debris lines -->
+  <g filter="url(#painted)" stroke-linecap="round">
+    <line x1="1200" y1="1300" x2="300" y2="400" stroke="#806080" stroke-width="2" opacity="0.15"/>
+    <line x1="1200" y1="1300" x2="2100" y2="350" stroke="#706070" stroke-width="2.5" opacity="0.12"/>
+    <line x1="1200" y1="1300" x2="150" y2="1600" stroke="#806080" stroke-width="2" opacity="0.13"/>
+    <line x1="1200" y1="1300" x2="2350" y2="1800" stroke="#706070" stroke-width="2.5" opacity="0.12"/>
+    <line x1="1200" y1="1300" x2="500" y2="2500" stroke="#806080" stroke-width="2" opacity="0.14"/>
+    <line x1="1200" y1="1300" x2="1900" y2="2600" stroke="#706070" stroke-width="2.5" opacity="0.12"/>
+    <line x1="1200" y1="1300" x2="1200" y2="200" stroke="#806080" stroke-width="2" opacity="0.13"/>
+    <line x1="1200" y1="1300" x2="1200" y2="2800" stroke="#706070" stroke-width="2" opacity="0.11"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.12"/>
+</svg>

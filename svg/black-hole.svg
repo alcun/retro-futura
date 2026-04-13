@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="110" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="diskGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="voidGrad" cx="50%" cy="40%" r="15%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="80%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#0a0005" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#050005"/>
+  
+  <!-- Stars -->
+  <circle cx="200" cy="200" r="2" fill="#d0c8e0" opacity="0.5"/>
+  <circle cx="600" cy="350" r="1.5" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="1800" cy="180" r="2.5" fill="#d0c8e0" opacity="0.5"/>
+  <circle cx="2100" cy="400" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="400" cy="600" r="1.5" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="2200" cy="700" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="300" cy="2600" r="2" fill="#d0c8e0" opacity="0.45"/>
+  <circle cx="900" cy="2800" r="1.5" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="1600" cy="2700" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="2000" cy="2900" r="2.5" fill="#d0c8e0" opacity="0.45"/>
+  <circle cx="500" cy="3000" r="1.5" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="1900" cy="500" r="1.5" fill="#d0c8e0" opacity="0.3"/>
+  <circle cx="150" cy="1200" r="2" fill="#d0c8e0" opacity="0.35"/>
+  <circle cx="2300" cy="1800" r="1.5" fill="#d0c8e0" opacity="0.3"/>
+  <circle cx="100" cy="2200" r="2" fill="#d0c8e0" opacity="0.4"/>
+  <circle cx="2350" cy="2400" r="1.5" fill="#d0c8e0" opacity="0.3"/>
+  
+  <!-- Accretion disk - elliptical rings, hot colours -->
+  <g filter="url(#painted)">
+    <!-- Outer disk - cooler red -->
+    <ellipse cx="1200" cy="1300" rx="900" ry="180" fill="none" stroke="#801020" stroke-width="20" opacity="0.2" filter="url(#diskGlow)"/>
+    <ellipse cx="1200" cy="1300" rx="850" ry="170" fill="none" stroke="#a02030" stroke-width="15" opacity="0.25"/>
+    
+    <!-- Mid disk - orange -->
+    <ellipse cx="1200" cy="1300" rx="700" ry="140" fill="none" stroke="#c04020" stroke-width="18" opacity="0.3" filter="url(#diskGlow)"/>
+    <ellipse cx="1200" cy="1300" rx="650" ry="130" fill="none" stroke="#d06030" stroke-width="12" opacity="0.35"/>
+    
+    <!-- Inner disk - hot yellow-white -->
+    <ellipse cx="1200" cy="1300" rx="500" ry="100" fill="none" stroke="#e08040" stroke-width="15" opacity="0.4" filter="url(#diskGlow)"/>
+    <ellipse cx="1200" cy="1300" rx="450" ry="90" fill="none" stroke="#e8a050" stroke-width="10" opacity="0.45"/>
+    
+    <!-- Hottest inner ring -->
+    <ellipse cx="1200" cy="1300" rx="320" ry="65" fill="none" stroke="#f0c060" stroke-width="12" opacity="0.4" filter="url(#diskGlow)"/>
+    <ellipse cx="1200" cy="1300" rx="300" ry="60" fill="none" stroke="#f0d080" stroke-width="6" opacity="0.5"/>
+    
+    <!-- Photon ring - bright thin ring very close -->
+    <ellipse cx="1200" cy="1300" rx="220" ry="44" fill="none" stroke="#ffe8a0" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Warped light above - the part of the disk that appears bent over the top -->
+    <path d="M 900 1300 Q 900 900 1200 850 Q 1500 900 1500 1300" fill="none" stroke="#d06030" stroke-width="10" opacity="0.2" filter="url(#diskGlow)"/>
+    <path d="M 950 1300 Q 960 950 1200 910 Q 1440 950 1450 1300" fill="none" stroke="#e08040" stroke-width="7" opacity="0.25"/>
+    <path d="M 1000 1300 Q 1020 1000 1200 970 Q 1380 1000 1400 1300" fill="none" stroke="#f0c060" stroke-width="4" opacity="0.3"/>
+  </g>
+  
+  <!-- Black hole void - pure black -->
+  <circle cx="1200" cy="1300" r="200" fill="#000000"/>
+  <circle cx="1200" cy="1300" r="210" fill="url(#voidGrad)"/>
+  
+  <!-- Gravitational lensing ring -->
+  <circle cx="1200" cy="1300" r="205" fill="none" stroke="#f0d080" stroke-width="1.5" opacity="0.3"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.12"/>
+</svg>

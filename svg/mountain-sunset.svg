@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="22" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1a2e"/>
+      <stop offset="40%" stop-color="#4a3050"/>
+      <stop offset="70%" stop-color="#8a5a60"/>
+      <stop offset="100%" stop-color="#d4886a"/>
+    </linearGradient>
+    <radialGradient id="sunsetGlow" cx="50%" cy="58%" r="35%">
+      <stop offset="0%" stop-color="#e8a060" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#d4886a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Gradient sky - purple to burnt orange -->
+  <rect width="2400" height="3200" fill="url(#sky)"/>
+  <rect width="2400" height="3200" fill="url(#sunsetGlow)"/>
+  
+  <!-- Sun disc sitting on horizon -->
+  <g filter="url(#painted)">
+    <circle cx="1200" cy="1850" r="180" fill="#e8a060" opacity="0.7"/>
+    <circle cx="1200" cy="1850" r="150" fill="#eeb878" opacity="0.5"/>
+    <circle cx="1200" cy="1850" r="100" fill="#f0c890" opacity="0.3"/>
+  </g>
+  
+  <!-- Horizontal bands through sun - like reflection lines -->
+  <g filter="url(#painted)" opacity="0.3">
+    <line x1="400" y1="1780" x2="2000" y2="1780" stroke="#d4886a" stroke-width="3"/>
+    <line x1="500" y1="1810" x2="1900" y2="1810" stroke="#d4886a" stroke-width="2.5"/>
+    <line x1="450" y1="1840" x2="1950" y2="1840" stroke="#d4886a" stroke-width="3.5"/>
+    <line x1="550" y1="1870" x2="1850" y2="1870" stroke="#d4886a" stroke-width="2"/>
+    <line x1="400" y1="1900" x2="2000" y2="1900" stroke="#d4886a" stroke-width="3"/>
+    <line x1="500" y1="1930" x2="1900" y2="1930" stroke="#d4886a" stroke-width="2.5"/>
+  </g>
+  
+  <!-- Far mountain range - blue/grey -->
+  <g filter="url(#painted)">
+    <path d="M 0 2000 L 300 1650 L 550 1750 L 800 1500 L 1050 1600 L 1300 1400 L 1500 1550 L 1700 1450 L 1900 1580 L 2100 1350 L 2400 1600 L 2400 2000 Z" fill="#3a3048" opacity="0.8"/>
+  </g>
+  
+  <!-- Mid mountain range - darker -->
+  <g filter="url(#painted)">
+    <path d="M 0 2200 L 200 1850 L 450 1950 L 700 1700 L 950 1850 L 1200 1650 L 1400 1800 L 1650 1700 L 1900 1800 L 2150 1600 L 2400 1750 L 2400 2200 Z" fill="#2a2838" opacity="0.85"/>
+  </g>
+  
+  <!-- Near mountain range - darkest, with trees implied -->
+  <g filter="url(#painted)">
+    <path d="M 0 2400 L 150 2050 L 350 2150 L 600 1900 L 800 2050 L 1000 1850 L 1200 2000 L 1450 1880 L 1700 2000 L 1900 1900 L 2100 2050 L 2250 1950 L 2400 2100 L 2400 2400 Z" fill="#1a1828" opacity="0.9"/>
+  </g>
+  
+  <!-- Foreground - dark earth -->
+  <rect x="0" y="2350" width="2400" height="850" fill="#151520" opacity="0.95"/>
+  
+  <!-- Tree silhouettes on foreground ridge -->
+  <g filter="url(#painted)" fill="#0e0e18" opacity="0.9">
+    <!-- Pine tree shapes -->
+    <path d="M 200 2350 L 220 2150 L 180 2150 Z"/>
+    <path d="M 350 2350 L 380 2100 L 320 2100 Z"/>
+    <path d="M 500 2350 L 525 2180 L 475 2180 Z"/>
+    <path d="M 1800 2350 L 1830 2120 L 1770 2120 Z"/>
+    <path d="M 1950 2350 L 1975 2190 L 1925 2190 Z"/>
+    <path d="M 2150 2350 L 2180 2140 L 2120 2140 Z"/>
+    <path d="M 2300 2350 L 2325 2200 L 2275 2200 Z"/>
+  </g>
+  
+  <!-- Stars in upper sky -->
+  <circle cx="350" cy="300" r="2.5" fill="#d0c0d0" opacity="0.6"/>
+  <circle cx="800" cy="180" r="2" fill="#d0c0d0" opacity="0.5"/>
+  <circle cx="1600" cy="250" r="3" fill="#d0c0d0" opacity="0.55"/>
+  <circle cx="1900" cy="400" r="2" fill="#d0c0d0" opacity="0.45"/>
+  <circle cx="500" cy="500" r="2.5" fill="#d0c0d0" opacity="0.5"/>
+  <circle cx="2100" cy="200" r="2" fill="#d0c0d0" opacity="0.4"/>
+  <circle cx="1100" cy="350" r="1.5" fill="#d0c0d0" opacity="0.5"/>
+  <circle cx="700" cy="600" r="2" fill="#d0c0d0" opacity="0.35"/>
+  <circle cx="1400" cy="150" r="2.5" fill="#d0c0d0" opacity="0.5"/>
+  <circle cx="2000" cy="550" r="1.5" fill="#d0c0d0" opacity="0.4"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.2"/>
+</svg>

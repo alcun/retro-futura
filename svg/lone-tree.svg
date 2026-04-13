@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="340" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="skyGlow" cx="50%" cy="65%" r="45%">
+      <stop offset="0%" stop-color="#e8a050" stop-opacity="0.4"/>
+      <stop offset="40%" stop-color="#a05838" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1a1020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skyBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c0818"/>
+      <stop offset="50%" stop-color="#1a1028"/>
+      <stop offset="80%" stop-color="#3a2030"/>
+      <stop offset="100%" stop-color="#804838"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#skyBg)"/>
+  <rect width="2400" height="3200" fill="url(#skyGlow)"/>
+  
+  <!-- Tree silhouette - simple, bold -->
+  <g filter="url(#painted)" fill="#080410" opacity="0.95">
+    <!-- Trunk -->
+    <rect x="1140" y="1800" width="120" height="800" rx="5"/>
+    
+    <!-- Main branches -->
+    <!-- Left major -->
+    <path d="M 1200 1900 Q 1100 1800 900 1650 Q 750 1550 650 1500" stroke="#080410" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <!-- Right major -->
+    <path d="M 1200 1850 Q 1350 1750 1550 1620 Q 1700 1530 1800 1480" stroke="#080410" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <!-- Left upper -->
+    <path d="M 1200 1950 Q 1050 1850 850 1800 Q 700 1760 550 1750" stroke="#080410" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <!-- Right upper -->
+    <path d="M 1200 1900 Q 1400 1820 1600 1780 Q 1750 1760 1900 1770" stroke="#080410" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <!-- Center up -->
+    <path d="M 1200 1800 Q 1180 1650 1150 1450 Q 1130 1300 1150 1200" stroke="#080410" stroke-width="15" fill="none" stroke-linecap="round"/>
+    
+    <!-- Smaller branches off main ones -->
+    <path d="M 900 1650 Q 850 1550 780 1450" stroke="#080410" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 900 1650 Q 920 1580 950 1480" stroke="#080410" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M 650 1500 Q 600 1420 550 1350" stroke="#080410" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 650 1500 Q 680 1430 700 1350" stroke="#080410" stroke-width="5" fill="none" stroke-linecap="round"/>
+    
+    <path d="M 1550 1620 Q 1620 1530 1700 1430" stroke="#080410" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 1550 1620 Q 1530 1540 1500 1440" stroke="#080410" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M 1800 1480 Q 1860 1400 1920 1320" stroke="#080410" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 1800 1480 Q 1780 1400 1750 1320" stroke="#080410" stroke-width="5" fill="none" stroke-linecap="round"/>
+    
+    <path d="M 1150 1300 Q 1080 1220 1000 1150" stroke="#080410" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 1150 1300 Q 1220 1200 1300 1120" stroke="#080410" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M 1150 1200 Q 1100 1100 1050 1020" stroke="#080410" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M 1150 1200 Q 1200 1100 1250 1020" stroke="#080410" stroke-width="6" fill="none" stroke-linecap="round"/>
+    
+    <!-- Twigs -->
+    <path d="M 780 1450 Q 740 1380 700 1300" stroke="#080410" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 950 1480 Q 960 1400 980 1300" stroke="#080410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 550 1350 Q 500 1280 450 1220" stroke="#080410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 1700 1430 Q 1750 1350 1800 1270" stroke="#080410" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 1500 1440 Q 1480 1360 1460 1270" stroke="#080410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 1920 1320 Q 1970 1250 2020 1190" stroke="#080410" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M 1000 1150 Q 950 1080 900 1010" stroke="#080410" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 1300 1120 Q 1360 1050 1420 990" stroke="#080410" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 1050 1020 Q 1000 940 960 870" stroke="#080410" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 1250 1020 Q 1300 940 1350 870" stroke="#080410" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect x="-100" y="2550" width="2600" height="700" fill="#080410" opacity="0.95"/>
+  <path d="M -100 2550 Q 300 2500 600 2530 Q 900 2560 1200 2520 Q 1500 2490 1800 2540 Q 2100 2570 2500 2530" fill="#080410" opacity="0.9" filter="url(#painted)"/>
+  
+  <!-- Stars -->
+  <circle cx="300" cy="200" r="2.5" fill="#d0c0d8" opacity="0.55"/>
+  <circle cx="700" cy="350" r="2" fill="#d0c0d8" opacity="0.4"/>
+  <circle cx="1700" cy="180" r="2.5" fill="#d0c0d8" opacity="0.5"/>
+  <circle cx="2100" cy="300" r="2" fill="#d0c0d8" opacity="0.4"/>
+  <circle cx="500" cy="550" r="1.5" fill="#d0c0d8" opacity="0.35"/>
+  <circle cx="1900" cy="500" r="2" fill="#d0c0d8" opacity="0.35"/>
+  <circle cx="400" cy="800" r="1.5" fill="#d0c0d8" opacity="0.25"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>

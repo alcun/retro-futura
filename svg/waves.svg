@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="95" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="oceanBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1828"/>
+      <stop offset="100%" stop-color="#0a2838"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#oceanBg)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Wave layers - back to front, lighter to darker, building up -->
+    
+    <!-- Wave 1 - deepest, most subtle -->
+    <path d="M -100 2800 Q 300 2650 600 2750 Q 900 2850 1200 2720 Q 1500 2590 1800 2700 Q 2100 2810 2500 2680" 
+          fill="none" stroke="#183848" stroke-width="6" opacity="0.4"/>
+    
+    <!-- Wave 2 -->
+    <path d="M -100 2600 Q 400 2420 700 2550 Q 1000 2680 1200 2500 Q 1400 2320 1700 2480 Q 2000 2640 2500 2460" 
+          fill="none" stroke="#1a4858" stroke-width="6.5" opacity="0.45"/>
+    
+    <!-- Wave 3 -->
+    <path d="M -100 2400 Q 300 2200 600 2350 Q 900 2500 1200 2300 Q 1500 2100 1800 2280 Q 2100 2460 2500 2250" 
+          fill="none" stroke="#1c5868" stroke-width="7" opacity="0.5"/>
+    
+    <!-- Wave 4 -->
+    <path d="M -100 2200 Q 400 1980 700 2130 Q 1000 2280 1200 2080 Q 1400 1880 1700 2060 Q 2000 2240 2500 2020" 
+          fill="none" stroke="#206878" stroke-width="7.5" opacity="0.55"/>
+    
+    <!-- Wave 5 -->
+    <path d="M -100 2000 Q 300 1780 600 1940 Q 900 2100 1200 1880 Q 1500 1660 1800 1850 Q 2100 2040 2500 1800" 
+          fill="none" stroke="#287888" stroke-width="8" opacity="0.6"/>
+    
+    <!-- Wave 6 -->
+    <path d="M -100 1800 Q 400 1560 700 1720 Q 1000 1880 1200 1660 Q 1400 1440 1700 1640 Q 2000 1840 2500 1580" 
+          fill="none" stroke="#308898" stroke-width="8.5" opacity="0.65"/>
+    
+    <!-- Wave 7 -->
+    <path d="M -100 1600 Q 300 1360 600 1530 Q 900 1700 1200 1460 Q 1500 1220 1800 1430 Q 2100 1640 2500 1380" 
+          fill="none" stroke="#3898a8" stroke-width="9" opacity="0.7"/>
+    
+    <!-- Wave 8 - getting brighter -->
+    <path d="M -100 1400 Q 400 1140 700 1320 Q 1000 1500 1200 1260 Q 1400 1020 1700 1230 Q 2000 1440 2500 1160" 
+          fill="none" stroke="#40a8b8" stroke-width="9" opacity="0.72"/>
+    
+    <!-- Wave 9 -->
+    <path d="M -100 1200 Q 300 940 600 1120 Q 900 1300 1200 1050 Q 1500 800 1800 1020 Q 2100 1240 2500 960" 
+          fill="none" stroke="#48b8c8" stroke-width="9.5" opacity="0.7"/>
+    
+    <!-- Wave 10 -->
+    <path d="M -100 1000 Q 400 720 700 910 Q 1000 1100 1200 840 Q 1400 580 1700 810 Q 2000 1040 2500 740" 
+          fill="none" stroke="#50c0d0" stroke-width="9" opacity="0.65"/>
+    
+    <!-- Wave 11 -->
+    <path d="M -100 800 Q 300 520 600 710 Q 900 900 1200 640 Q 1500 380 1800 610 Q 2100 840 2500 540" 
+          fill="none" stroke="#58c8d8" stroke-width="8.5" opacity="0.6"/>
+    
+    <!-- Wave 12 - highest, most subtle -->
+    <path d="M -100 600 Q 400 320 700 510 Q 1000 700 1200 440 Q 1400 180 1700 420 Q 2000 660 2500 350" 
+          fill="none" stroke="#60d0e0" stroke-width="7.5" opacity="0.5"/>
+    
+    <!-- Foam/spray dots near peaks -->
+    <circle cx="1200" cy="420" r="4" fill="#80e0f0" opacity="0.25"/>
+    <circle cx="1220" cy="440" r="3" fill="#80e0f0" opacity="0.2"/>
+    <circle cx="1200" cy="620" r="4" fill="#70d8e8" opacity="0.25"/>
+    <circle cx="1180" cy="640" r="3" fill="#70d8e8" opacity="0.2"/>
+    <circle cx="1200" cy="820" r="4" fill="#60d0e0" opacity="0.25"/>
+    <circle cx="1210" cy="840" r="3" fill="#60d0e0" opacity="0.2"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="88" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#1a1410"/>
+  
+  <g filter="url(#painted)">
+    <!-- Concentric circles -->
+    <circle cx="1200" cy="1500" r="1000" fill="none" stroke="#8a6030" stroke-width="2" opacity="0.25"/>
+    <circle cx="1200" cy="1500" r="850" fill="none" stroke="#a07038" stroke-width="2.5" opacity="0.3"/>
+    <circle cx="1200" cy="1500" r="700" fill="none" stroke="#8a6030" stroke-width="2" opacity="0.25"/>
+    <circle cx="1200" cy="1500" r="550" fill="none" stroke="#a07038" stroke-width="3" opacity="0.35"/>
+    <circle cx="1200" cy="1500" r="400" fill="none" stroke="#8a6030" stroke-width="2" opacity="0.25"/>
+    <circle cx="1200" cy="1500" r="250" fill="none" stroke="#b08040" stroke-width="3.5" opacity="0.4"/>
+    
+    <!-- Square inscribed -->
+    <rect x="550" y="850" width="1300" height="1300" fill="none" stroke="#a07038" stroke-width="2.5" opacity="0.3" transform="rotate(0, 1200, 1500)"/>
+    
+    <!-- Rotated square -->
+    <rect x="550" y="850" width="1300" height="1300" fill="none" stroke="#8a6030" stroke-width="2" opacity="0.2" transform="rotate(45, 1200, 1500)"/>
+    
+    <!-- Cross lines -->
+    <line x1="1200" y1="400" x2="1200" y2="2600" stroke="#705028" stroke-width="1.5" opacity="0.2"/>
+    <line x1="200" y1="1500" x2="2200" y2="1500" stroke="#705028" stroke-width="1.5" opacity="0.2"/>
+    
+    <!-- Diagonal lines -->
+    <line x1="400" y1="700" x2="2000" y2="2300" stroke="#705028" stroke-width="1" opacity="0.15"/>
+    <line x1="2000" y1="700" x2="400" y2="2300" stroke="#705028" stroke-width="1" opacity="0.15"/>
+    
+    <!-- Golden spiral approximation using arcs -->
+    <path d="M 1200 1500 
+             A 250 250 0 0 1 1450 1500
+             A 400 400 0 0 1 1200 1100
+             A 550 550 0 0 1 650 1500
+             A 700 700 0 0 1 1200 2200
+             A 850 850 0 0 1 2050 1500" 
+          fill="none" stroke="#c09048" stroke-width="4" opacity="0.45"/>
+    
+    <!-- Center point -->
+    <circle cx="1200" cy="1500" r="12" fill="#c09048" opacity="0.6"/>
+    <circle cx="1200" cy="1500" r="6" fill="#e0b860" opacity="0.4"/>
+    
+    <!-- Phi ratio marks on vertical -->
+    <line x1="1150" y1="882" x2="1250" y2="882" stroke="#c09048" stroke-width="2.5" opacity="0.4"/>
+    <line x1="1150" y1="1118" x2="1250" y2="1118" stroke="#c09048" stroke-width="2.5" opacity="0.4"/>
+    <line x1="1150" y1="1882" x2="1250" y2="1882" stroke="#c09048" stroke-width="2.5" opacity="0.4"/>
+    <line x1="1150" y1="2118" x2="1250" y2="2118" stroke="#c09048" stroke-width="2.5" opacity="0.4"/>
+    
+    <!-- Small circles at golden ratio intersections -->
+    <circle cx="1200" cy="882" r="5" fill="#c09048" opacity="0.35"/>
+    <circle cx="1200" cy="1118" r="5" fill="#c09048" opacity="0.35"/>
+    <circle cx="1200" cy="1882" r="5" fill="#c09048" opacity="0.35"/>
+    <circle cx="1200" cy="2118" r="5" fill="#c09048" opacity="0.35"/>
+    <circle cx="882" cy="1500" r="5" fill="#c09048" opacity="0.35"/>
+    <circle cx="1518" cy="1500" r="5" fill="#c09048" opacity="0.35"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.2"/>
+</svg>

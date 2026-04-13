@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="101" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#f0e8d4"/>
+  
+  <g filter="url(#painted)">
+    <!-- Peak 1 - upper left area -->
+    <path d="M 700 900 Q 600 850 550 920 Q 480 1000 520 1100 Q 580 1180 700 1150 Q 820 1100 850 1000 Q 860 920 780 870 Z" fill="none" stroke="#a07838" stroke-width="3" opacity="0.55"/>
+    <path d="M 650 800 Q 500 750 420 850 Q 350 970 400 1120 Q 470 1250 650 1220 Q 830 1180 900 1050 Q 950 900 850 800 Q 770 730 650 800 Z" fill="none" stroke="#a07838" stroke-width="3.2" opacity="0.5"/>
+    <path d="M 620 700 Q 400 650 300 800 Q 220 950 280 1150 Q 370 1350 600 1320 Q 850 1280 960 1100 Q 1050 900 920 720 Q 800 600 620 700 Z" fill="none" stroke="#a07838" stroke-width="3.5" opacity="0.45"/>
+    <path d="M 600 580 Q 300 520 180 720 Q 80 950 160 1200 Q 280 1450 560 1420 Q 880 1380 1020 1150 Q 1150 900 1000 650 Q 850 480 600 580 Z" fill="none" stroke="#a07838" stroke-width="3.8" opacity="0.4"/>
+    <path d="M 580 460 Q 200 380 60 640 Q -50 950 50 1260 Q 190 1560 520 1530 Q 920 1480 1100 1200 Q 1260 900 1080 580 Q 900 360 580 460 Z" fill="none" stroke="#a07838" stroke-width="3.5" opacity="0.35"/>
+    
+    <!-- Peak 2 - center right -->
+    <path d="M 1500 1500 Q 1420 1450 1380 1520 Q 1350 1600 1400 1680 Q 1470 1730 1550 1700 Q 1620 1650 1620 1570 Q 1600 1490 1500 1500 Z" fill="none" stroke="#a07838" stroke-width="3" opacity="0.55"/>
+    <path d="M 1520 1380 Q 1380 1330 1300 1440 Q 1240 1560 1300 1720 Q 1380 1840 1530 1820 Q 1680 1780 1730 1630 Q 1760 1480 1660 1380 Q 1580 1320 1520 1380 Z" fill="none" stroke="#a07838" stroke-width="3.2" opacity="0.5"/>
+    <path d="M 1540 1250 Q 1320 1200 1200 1360 Q 1110 1520 1180 1760 Q 1280 1960 1510 1940 Q 1740 1900 1850 1700 Q 1920 1500 1800 1320 Q 1680 1200 1540 1250 Z" fill="none" stroke="#a07838" stroke-width="3.5" opacity="0.45"/>
+    <path d="M 1560 1120 Q 1260 1060 1100 1280 Q 970 1500 1060 1810 Q 1180 2080 1490 2060 Q 1800 2020 1950 1760 Q 2060 1500 1920 1250 Q 1780 1080 1560 1120 Z" fill="none" stroke="#a07838" stroke-width="3.8" opacity="0.4"/>
+    <path d="M 1570 990 Q 1200 920 1000 1200 Q 830 1480 940 1860 Q 1080 2200 1470 2180 Q 1860 2140 2060 1820 Q 2200 1500 2030 1180 Q 1860 940 1570 990 Z" fill="none" stroke="#a07838" stroke-width="3.5" opacity="0.35"/>
+    
+    <!-- Peak 3 - lower area, connecting -->
+    <path d="M 900 2300 Q 800 2250 750 2350 Q 720 2450 780 2530 Q 860 2580 950 2540 Q 1020 2480 1010 2390 Q 980 2310 900 2300 Z" fill="none" stroke="#a07838" stroke-width="3" opacity="0.55"/>
+    <path d="M 920 2180 Q 750 2130 670 2280 Q 610 2430 680 2580 Q 780 2700 950 2670 Q 1100 2630 1140 2470 Q 1160 2310 1050 2210 Q 960 2150 920 2180 Z" fill="none" stroke="#a07838" stroke-width="3.2" opacity="0.5"/>
+    <path d="M 940 2050 Q 680 1990 560 2200 Q 470 2400 560 2630 Q 680 2830 930 2800 Q 1180 2760 1260 2540 Q 1320 2320 1180 2120 Q 1050 1990 940 2050 Z" fill="none" stroke="#a07838" stroke-width="3.5" opacity="0.45"/>
+    <path d="M 950 1920 Q 600 1850 440 2120 Q 320 2380 430 2690 Q 580 2960 900 2930 Q 1250 2880 1380 2600 Q 1480 2320 1300 2050 Q 1130 1860 950 1920 Z" fill="none" stroke="#a07838" stroke-width="3.8" opacity="0.4"/>
+    
+    <!-- Large outer contours connecting everything -->
+    <path d="M 500 300 Q 100 200 -50 550 Q -150 1000 50 1500 Q 200 1850 350 2100 Q 200 2400 250 2700 Q 400 3100 800 3050 Q 1200 3000 1400 2800 Q 1600 2600 1800 2400 Q 2100 2500 2300 2200 Q 2500 1850 2350 1400 Q 2200 1000 2050 750 Q 1850 400 1400 300 Q 1000 250 500 300 Z" fill="none" stroke="#a07838" stroke-width="3" opacity="0.25"/>
+    
+    <!-- Peak markers - small x marks -->
+    <g stroke="#b08840" stroke-width="2.5" opacity="0.5">
+      <line x1="690" y1="890" x2="710" y2="910"/>
+      <line x1="710" y1="890" x2="690" y2="910"/>
+      
+      <line x1="1490" y1="1490" x2="1510" y2="1510"/>
+      <line x1="1510" y1="1490" x2="1490" y2="1510"/>
+      
+      <line x1="890" y1="2290" x2="910" y2="2310"/>
+      <line x1="910" y1="2290" x2="890" y2="2310"/>
+    </g>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.25"/>
+</svg>

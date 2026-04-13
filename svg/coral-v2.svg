@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="250" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="bioGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="seaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#081828"/>
+      <stop offset="100%" stop-color="#041018"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#seaBg)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Fan corals - spreading branch shapes -->
+    <!-- Fan coral 1 - large, teal -->
+    <g stroke="#38a0a8" fill="none" stroke-linecap="round" opacity="0.5">
+      <path d="M 600 3200 L 600 2600" stroke-width="8"/>
+      <path d="M 600 2800 C 500 2700 400 2500 350 2300" stroke-width="5"/>
+      <path d="M 600 2700 C 520 2600 460 2400 440 2250" stroke-width="4"/>
+      <path d="M 600 2900 C 480 2800 380 2600 320 2400" stroke-width="4.5"/>
+      <path d="M 600 2800 C 700 2700 800 2500 850 2300" stroke-width="5"/>
+      <path d="M 600 2700 C 680 2600 740 2400 760 2250" stroke-width="4"/>
+      <path d="M 600 2900 C 720 2800 820 2600 880 2400" stroke-width="4.5"/>
+      <path d="M 600 2600 C 550 2500 500 2350 480 2200" stroke-width="3.5"/>
+      <path d="M 600 2600 C 650 2500 700 2350 720 2200" stroke-width="3.5"/>
+    </g>
+    
+    <!-- Fan coral 2 - smaller, warm pink -->
+    <g stroke="#c86070" fill="none" stroke-linecap="round" opacity="0.45">
+      <path d="M 1800 3200 L 1800 2750" stroke-width="7"/>
+      <path d="M 1800 2900 C 1700 2800 1620 2650 1600 2520" stroke-width="4.5"/>
+      <path d="M 1800 2850 C 1730 2750 1680 2600 1670 2500" stroke-width="3.5"/>
+      <path d="M 1800 2950 C 1680 2850 1580 2700 1540 2550" stroke-width="4"/>
+      <path d="M 1800 2900 C 1900 2800 1980 2650 2000 2520" stroke-width="4.5"/>
+      <path d="M 1800 2850 C 1870 2750 1920 2600 1930 2500" stroke-width="3.5"/>
+      <path d="M 1800 2950 C 1920 2850 2020 2700 2060 2550" stroke-width="4"/>
+      <path d="M 1800 2750 C 1750 2650 1700 2500 1690 2400" stroke-width="3"/>
+      <path d="M 1800 2750 C 1850 2650 1900 2500 1910 2400" stroke-width="3"/>
+    </g>
+    
+    <!-- Brain coral - rounded bumpy clusters -->
+    <g stroke="#d08868" fill="none" stroke-linecap="round" opacity="0.4">
+      <!-- Cluster 1 -->
+      <circle cx="1100" cy="2900" r="80" stroke-width="5"/>
+      <circle cx="1180" cy="2850" r="60" stroke-width="4"/>
+      <circle cx="1030" cy="2840" r="55" stroke-width="4"/>
+      <circle cx="1140" cy="2970" r="50" stroke-width="3.5"/>
+      <circle cx="1060" cy="2960" r="45" stroke-width="3.5"/>
+      <!-- Cluster 2 -->
+      <circle cx="300" cy="2950" r="70" stroke-width="4.5"/>
+      <circle cx="370" cy="2900" r="55" stroke-width="4"/>
+      <circle cx="240" cy="2890" r="50" stroke-width="3.5"/>
+      <circle cx="330" cy="3020" r="45" stroke-width="3.5"/>
+    </g>
+    
+    <!-- Anemone tendrils - flowing upward -->
+    <g stroke="#e880a0" fill="none" stroke-linecap="round" opacity="0.35">
+      <path d="M 1400 3200 C 1400 3100 1380 2950 1350 2800 C 1330 2700 1310 2600 1320 2500" stroke-width="3.5"/>
+      <path d="M 1420 3200 C 1430 3080 1450 2920 1480 2780 C 1500 2680 1520 2580 1510 2480" stroke-width="3"/>
+      <path d="M 1440 3200 C 1440 3050 1420 2880 1380 2740 C 1350 2640 1300 2550 1280 2450" stroke-width="3.5"/>
+      <path d="M 1380 3200 C 1370 3100 1340 2950 1300 2820 C 1270 2720 1250 2620 1260 2530" stroke-width="3"/>
+      <path d="M 1460 3200 C 1470 3050 1500 2880 1540 2740 C 1570 2640 1600 2550 1590 2470" stroke-width="3"/>
+      <path d="M 1410 3200 C 1410 3100 1400 2930 1410 2780 C 1420 2680 1430 2580 1420 2470" stroke-width="2.5"/>
+    </g>
+    
+    <!-- Seaweed strands - tall, swaying -->
+    <g stroke="#308858" fill="none" stroke-linecap="round" opacity="0.35">
+      <path d="M 2100 3200 C 2080 3000 2100 2800 2070 2600 C 2050 2400 2080 2200 2060 2000" stroke-width="5"/>
+      <path d="M 2150 3200 C 2170 3000 2150 2800 2180 2600 C 2200 2400 2170 2200 2190 2050" stroke-width="4.5"/>
+      <path d="M 2050 3200 C 2030 3020 2050 2840 2020 2660 C 2000 2480 2030 2300 2010 2150" stroke-width="4"/>
+    </g>
+    
+    <!-- Sea grass on left -->
+    <g stroke="#28805a" fill="none" stroke-linecap="round" opacity="0.3">
+      <path d="M 100 3200 C 90 3050 110 2900 80 2750 C 60 2600 90 2450 70 2350" stroke-width="4"/>
+      <path d="M 150 3200 C 160 3050 140 2900 170 2750 C 190 2600 160 2450 180 2380" stroke-width="3.5"/>
+      <path d="M 50 3200 C 40 3080 60 2940 30 2800 C 10 2660 40 2520 20 2420" stroke-width="3.5"/>
+    </g>
+    
+    <!-- Bioluminescent particles - scattered -->
+    <circle cx="400" cy="1200" r="4" fill="#40e8d0" opacity="0.2" filter="url(#bioGlow)"/>
+    <circle cx="1000" cy="800" r="3.5" fill="#40e8d0" opacity="0.18" filter="url(#bioGlow)"/>
+    <circle cx="1600" cy="1500" r="4" fill="#f080a0" opacity="0.2" filter="url(#bioGlow)"/>
+    <circle cx="700" cy="2000" r="3" fill="#40e8d0" opacity="0.15" filter="url(#bioGlow)"/>
+    <circle cx="2000" cy="1000" r="3.5" fill="#40e8d0" opacity="0.18" filter="url(#bioGlow)"/>
+    <circle cx="1200" cy="1800" r="4" fill="#f080a0" opacity="0.18" filter="url(#bioGlow)"/>
+    <circle cx="500" cy="600" r="3" fill="#40e8d0" opacity="0.15" filter="url(#bioGlow)"/>
+    <circle cx="1800" cy="500" r="3.5" fill="#40e8d0" opacity="0.15" filter="url(#bioGlow)"/>
+    <circle cx="300" cy="1700" r="3" fill="#f080a0" opacity="0.15" filter="url(#bioGlow)"/>
+    <circle cx="1500" cy="2200" r="4" fill="#40e8d0" opacity="0.18" filter="url(#bioGlow)"/>
+    <circle cx="900" cy="400" r="3" fill="#40e8d0" opacity="0.12" filter="url(#bioGlow)"/>
+    <circle cx="2200" cy="1800" r="3.5" fill="#f080a0" opacity="0.15" filter="url(#bioGlow)"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

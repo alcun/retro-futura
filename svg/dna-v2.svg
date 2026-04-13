@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="70" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#141820"/>
+  
+  <g filter="url(#painted)">
+    <!-- STRAND A (teal) - front when going left to right -->
+    <path d="M 850 -100 
+             C 850 0, 1550 100, 1550 250
+             C 1550 400, 850 500, 850 650
+             C 850 800, 1550 900, 1550 1050
+             C 1550 1200, 850 1300, 850 1450
+             C 850 1600, 1550 1700, 1550 1850
+             C 1550 2000, 850 2100, 850 2250
+             C 850 2400, 1550 2500, 1550 2650
+             C 1550 2800, 850 2900, 850 3050
+             C 850 3200, 1550 3200, 1550 3300" 
+          fill="none" stroke="#48b8c0" stroke-width="10" opacity="0.85" stroke-linecap="round"/>
+    
+    <!-- STRAND B (coral) - opposite phase -->
+    <path d="M 1550 -100 
+             C 1550 0, 850 100, 850 250
+             C 850 400, 1550 500, 1550 650
+             C 1550 800, 850 900, 850 1050
+             C 850 1200, 1550 1300, 1550 1450
+             C 1550 1600, 850 1700, 850 1850
+             C 850 2000, 1550 2100, 1550 2250
+             C 1550 2400, 850 2500, 850 2650
+             C 850 2800, 1550 2900, 1550 3050
+             C 1550 3200, 850 3200, 850 3300" 
+          fill="none" stroke="#d07858" stroke-width="10" opacity="0.85" stroke-linecap="round"/>
+    
+    <!-- BASE PAIRS - rungs connecting the strands -->
+    <!-- Each pair has coloured dots at ends -->
+    
+    <!-- Period 1: strands cross at ~250, widest at ~100 and ~400 -->
+    <line x1="920" y1="50" x2="1480" y2="50" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="50" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="50" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <line x1="1000" y1="130" x2="1400" y2="130" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="130" r="7" fill="#e8c040" opacity="0.5"/>
+    <circle cx="1400" cy="130" r="7" fill="#6888d0" opacity="0.5"/>
+    
+    <line x1="1150" y1="200" x2="1250" y2="200" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="350" x2="1400" y2="350" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="350" r="7" fill="#6888d0" opacity="0.5"/>
+    <circle cx="1400" cy="350" r="7" fill="#e8c040" opacity="0.5"/>
+    
+    <line x1="920" y1="440" x2="1480" y2="440" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="440" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="440" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <!-- Period 2 -->
+    <line x1="920" y1="550" x2="1480" y2="550" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="550" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="550" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <line x1="1000" y1="630" x2="1400" y2="630" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="630" r="7" fill="#48b8c0" opacity="0.5"/>
+    <circle cx="1400" cy="630" r="7" fill="#d07858" opacity="0.5"/>
+    
+    <line x1="1150" y1="700" x2="1250" y2="700" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="850" x2="1400" y2="850" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="850" r="7" fill="#e8c040" opacity="0.5"/>
+    <circle cx="1400" cy="850" r="7" fill="#6888d0" opacity="0.5"/>
+    
+    <line x1="920" y1="940" x2="1480" y2="940" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="940" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="940" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <!-- Period 3 -->
+    <line x1="920" y1="1050" x2="1480" y2="1050" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="1050" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="1050" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <line x1="1000" y1="1130" x2="1400" y2="1130" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="1130" r="7" fill="#6888d0" opacity="0.5"/>
+    <circle cx="1400" cy="1130" r="7" fill="#e8c040" opacity="0.5"/>
+    
+    <line x1="1150" y1="1200" x2="1250" y2="1200" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="1350" x2="1400" y2="1350" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="1350" r="7" fill="#d07858" opacity="0.5"/>
+    <circle cx="1400" cy="1350" r="7" fill="#48b8c0" opacity="0.5"/>
+    
+    <line x1="920" y1="1440" x2="1480" y2="1440" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="1440" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="1440" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <!-- Period 4 -->
+    <line x1="920" y1="1550" x2="1480" y2="1550" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="1550" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="1550" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <line x1="1000" y1="1630" x2="1400" y2="1630" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="1630" r="7" fill="#e8c040" opacity="0.5"/>
+    <circle cx="1400" cy="1630" r="7" fill="#6888d0" opacity="0.5"/>
+    
+    <line x1="1150" y1="1700" x2="1250" y2="1700" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="1850" x2="1400" y2="1850" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="1850" r="7" fill="#48b8c0" opacity="0.5"/>
+    <circle cx="1400" cy="1850" r="7" fill="#d07858" opacity="0.5"/>
+    
+    <line x1="920" y1="1940" x2="1480" y2="1940" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="1940" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="1940" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <!-- Period 5 -->
+    <line x1="920" y1="2050" x2="1480" y2="2050" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="2050" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="2050" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <line x1="1000" y1="2130" x2="1400" y2="2130" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="2130" r="7" fill="#6888d0" opacity="0.5"/>
+    <circle cx="1400" cy="2130" r="7" fill="#e8c040" opacity="0.5"/>
+    
+    <line x1="1150" y1="2200" x2="1250" y2="2200" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="2350" x2="1400" y2="2350" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="2350" r="7" fill="#e8c040" opacity="0.5"/>
+    <circle cx="1400" cy="2350" r="7" fill="#6888d0" opacity="0.5"/>
+    
+    <line x1="920" y1="2440" x2="1480" y2="2440" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="2440" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="2440" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <!-- Period 6 -->
+    <line x1="920" y1="2550" x2="1480" y2="2550" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="2550" r="8" fill="#d07858" opacity="0.6"/>
+    <circle cx="1480" cy="2550" r="8" fill="#48b8c0" opacity="0.6"/>
+    
+    <line x1="1000" y1="2630" x2="1400" y2="2630" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="2630" r="7" fill="#48b8c0" opacity="0.5"/>
+    <circle cx="1400" cy="2630" r="7" fill="#d07858" opacity="0.5"/>
+    
+    <line x1="1150" y1="2700" x2="1250" y2="2700" stroke="#384858" stroke-width="3.5" opacity="0.45"/>
+    
+    <line x1="1000" y1="2850" x2="1400" y2="2850" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+    <circle cx="1000" cy="2850" r="7" fill="#6888d0" opacity="0.5"/>
+    <circle cx="1400" cy="2850" r="7" fill="#e8c040" opacity="0.5"/>
+    
+    <line x1="920" y1="2940" x2="1480" y2="2940" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <circle cx="920" cy="2940" r="8" fill="#48b8c0" opacity="0.6"/>
+    <circle cx="1480" cy="2940" r="8" fill="#d07858" opacity="0.6"/>
+    
+    <line x1="920" y1="3050" x2="1480" y2="3050" stroke="#384858" stroke-width="3.5" opacity="0.55"/>
+    <line x1="1000" y1="3130" x2="1400" y2="3130" stroke="#384858" stroke-width="3.5" opacity="0.5"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

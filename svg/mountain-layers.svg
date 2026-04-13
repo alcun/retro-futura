@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="120" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1020"/>
+      <stop offset="100%" stop-color="#1a2840"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#skyGrad)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Layer 12 - most distant, lightest -->
+    <path d="M -100 1200 L 200 1050 L 400 1100 L 650 950 L 900 1020 L 1100 900 L 1350 980 L 1550 880 L 1800 950 L 2000 870 L 2200 940 L 2500 850 L 2500 3200 L -100 3200 Z" 
+          fill="#384868" opacity="0.2"/>
+    
+    <!-- Layer 11 -->
+    <path d="M -100 1350 L 150 1180 L 380 1250 L 600 1100 L 850 1200 L 1050 1050 L 1300 1150 L 1500 1020 L 1750 1120 L 1950 1000 L 2200 1100 L 2500 980 L 2500 3200 L -100 3200 Z" 
+          fill="#344460" opacity="0.25"/>
+    
+    <!-- Layer 10 -->
+    <path d="M -100 1500 L 250 1320 L 450 1400 L 700 1230 L 950 1350 L 1150 1200 L 1400 1310 L 1600 1180 L 1850 1290 L 2050 1150 L 2250 1260 L 2500 1130 L 2500 3200 L -100 3200 Z" 
+          fill="#303c58" opacity="0.3"/>
+    
+    <!-- Layer 9 -->
+    <path d="M -100 1650 L 200 1470 L 420 1560 L 680 1380 L 900 1500 L 1100 1350 L 1350 1470 L 1580 1330 L 1800 1450 L 2020 1300 L 2250 1420 L 2500 1280 L 2500 3200 L -100 3200 Z" 
+          fill="#2c3850" opacity="0.35"/>
+    
+    <!-- Layer 8 -->
+    <path d="M -100 1800 L 180 1620 L 400 1710 L 660 1530 L 880 1660 L 1100 1500 L 1350 1630 L 1560 1490 L 1800 1610 L 2000 1460 L 2220 1580 L 2500 1430 L 2500 3200 L -100 3200 Z" 
+          fill="#283448" opacity="0.4"/>
+    
+    <!-- Layer 7 -->
+    <path d="M -100 1950 L 220 1760 L 430 1860 L 690 1670 L 910 1810 L 1120 1650 L 1370 1780 L 1580 1640 L 1820 1770 L 2040 1610 L 2260 1740 L 2500 1580 L 2500 3200 L -100 3200 Z" 
+          fill="#243040" opacity="0.45"/>
+    
+    <!-- Layer 6 -->
+    <path d="M -100 2100 L 200 1910 L 440 2010 L 680 1820 L 920 1960 L 1130 1800 L 1380 1940 L 1600 1790 L 1830 1930 L 2060 1760 L 2280 1900 L 2500 1730 L 2500 3200 L -100 3200 Z" 
+          fill="#202c38" opacity="0.5"/>
+    
+    <!-- Layer 5 -->
+    <path d="M -100 2250 L 230 2060 L 460 2160 L 700 1970 L 930 2110 L 1150 1950 L 1400 2090 L 1620 1940 L 1850 2080 L 2080 1920 L 2300 2060 L 2500 1890 L 2500 3200 L -100 3200 Z" 
+          fill="#1c2830" opacity="0.55"/>
+    
+    <!-- Layer 4 -->
+    <path d="M -100 2400 L 200 2210 L 450 2320 L 690 2120 L 940 2270 L 1160 2100 L 1410 2250 L 1640 2090 L 1870 2240 L 2100 2070 L 2320 2220 L 2500 2050 L 2500 3200 L -100 3200 Z" 
+          fill="#182428" opacity="0.6"/>
+    
+    <!-- Layer 3 -->
+    <path d="M -100 2550 L 240 2360 L 470 2470 L 720 2270 L 950 2420 L 1180 2260 L 1420 2400 L 1650 2240 L 1890 2390 L 2120 2230 L 2340 2380 L 2500 2200 L 2500 3200 L -100 3200 Z" 
+          fill="#142020" opacity="0.65"/>
+    
+    <!-- Layer 2 -->
+    <path d="M -100 2700 L 200 2510 L 460 2620 L 700 2420 L 950 2580 L 1170 2400 L 1430 2560 L 1660 2400 L 1900 2550 L 2130 2380 L 2350 2540 L 2500 2360 L 2500 3200 L -100 3200 Z" 
+          fill="#101c1c" opacity="0.7"/>
+    
+    <!-- Layer 1 - nearest, darkest -->
+    <path d="M -100 2850 L 220 2680 L 480 2780 L 710 2580 L 960 2740 L 1190 2570 L 1440 2720 L 1670 2560 L 1910 2710 L 2140 2540 L 2370 2690 L 2500 2520 L 2500 3200 L -100 3200 Z" 
+          fill="#0c1818" opacity="0.8"/>
+    
+    <!-- Foreground -->
+    <path d="M -100 3000 L 250 2850 L 500 2930 L 750 2800 L 1000 2900 L 1250 2790 L 1500 2880 L 1750 2770 L 2000 2870 L 2250 2760 L 2500 2850 L 2500 3200 L -100 3200 Z" 
+          fill="#081010" opacity="0.9"/>
+  </g>
+  
+  <!-- Stars -->
+  <circle cx="300" cy="200" r="2.5" fill="#c0c8e0" opacity="0.5"/>
+  <circle cx="700" cy="350" r="2" fill="#c0c8e0" opacity="0.4"/>
+  <circle cx="1100" cy="150" r="2.5" fill="#c0c8e0" opacity="0.55"/>
+  <circle cx="1500" cy="280" r="2" fill="#c0c8e0" opacity="0.4"/>
+  <circle cx="1900" cy="180" r="2.5" fill="#c0c8e0" opacity="0.5"/>
+  <circle cx="2200" cy="320" r="2" fill="#c0c8e0" opacity="0.4"/>
+  <circle cx="500" cy="500" r="1.5" fill="#c0c8e0" opacity="0.35"/>
+  <circle cx="1300" cy="450" r="2" fill="#c0c8e0" opacity="0.3"/>
+  <circle cx="2000" cy="520" r="1.5" fill="#c0c8e0" opacity="0.35"/>
+  <circle cx="800" cy="600" r="2" fill="#c0c8e0" opacity="0.3"/>
+  <circle cx="400" cy="750" r="1.5" fill="#c0c8e0" opacity="0.25"/>
+  <circle cx="1700" cy="680" r="2" fill="#c0c8e0" opacity="0.3"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>

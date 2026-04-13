@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="3" seed="320" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#1a0818"/>
+  
+  <!-- Horizontal colour field bands - Rothko-meets-landscape -->
+  <g filter="url(#painted)">
+    <!-- Deep violet top -->
+    <rect x="-50" y="0" width="2500" height="350" fill="#1a0828" opacity="0.9"/>
+    
+    <!-- Indigo -->
+    <rect x="-50" y="300" width="2500" height="300" fill="#201040" opacity="0.8"/>
+    
+    <!-- Deep purple -->
+    <rect x="-50" y="550" width="2500" height="320" fill="#301850" opacity="0.75"/>
+    
+    <!-- Purple -->
+    <rect x="-50" y="820" width="2500" height="300" fill="#482060" opacity="0.7"/>
+    
+    <!-- Warm purple -->
+    <rect x="-50" y="1070" width="2500" height="280" fill="#602858" opacity="0.65"/>
+    
+    <!-- Mauve -->
+    <rect x="-50" y="1300" width="2500" height="300" fill="#803050" opacity="0.6"/>
+    
+    <!-- Rose -->
+    <rect x="-50" y="1550" width="2500" height="280" fill="#a03848" opacity="0.58"/>
+    
+    <!-- Deep coral -->
+    <rect x="-50" y="1780" width="2500" height="300" fill="#c04840" opacity="0.55"/>
+    
+    <!-- Coral -->
+    <rect x="-50" y="2030" width="2500" height="280" fill="#d06038" opacity="0.52"/>
+    
+    <!-- Warm orange -->
+    <rect x="-50" y="2260" width="2500" height="300" fill="#e07830" opacity="0.5"/>
+    
+    <!-- Orange -->
+    <rect x="-50" y="2510" width="2500" height="280" fill="#e89030" opacity="0.48"/>
+    
+    <!-- Amber -->
+    <rect x="-50" y="2740" width="2500" height="300" fill="#f0a830" opacity="0.45"/>
+    
+    <!-- Gold at bottom -->
+    <rect x="-50" y="2990" width="2500" height="250" fill="#f0c040" opacity="0.4"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="3" seed="330" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="lineGlow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="skyDown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#060810"/>
+      <stop offset="85%" stop-color="#101828"/>
+      <stop offset="100%" stop-color="#182838"/>
+    </linearGradient>
+    <linearGradient id="seaUp" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#040608"/>
+      <stop offset="85%" stop-color="#0c1420"/>
+      <stop offset="100%" stop-color="#142030"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="2400" height="1600" fill="url(#skyDown)"/>
+  <!-- Sea -->
+  <rect y="1600" width="2400" height="1600" fill="url(#seaUp)"/>
+  
+  <g filter="url(#painted)">
+    <!-- The horizon glow - wide soft band -->
+    <rect x="-100" y="1520" width="2600" height="160" fill="#182838" opacity="0.5"/>
+    
+    <!-- Warm glow around the line -->
+    <line x1="-100" y1="1600" x2="2500" y2="1600" stroke="#d08848" stroke-width="80" opacity="0.06" filter="url(#lineGlow)"/>
+    <line x1="-100" y1="1600" x2="2500" y2="1600" stroke="#e0a050" stroke-width="40" opacity="0.08" filter="url(#lineGlow)"/>
+    <line x1="-100" y1="1600" x2="2500" y2="1600" stroke="#e8b860" stroke-width="20" opacity="0.12" filter="url(#lineGlow)"/>
+    
+    <!-- The line itself - thin and bright -->
+    <line x1="-100" y1="1600" x2="2500" y2="1600" stroke="#f0c868" stroke-width="6" opacity="0.5"/>
+    <line x1="-100" y1="1600" x2="2500" y2="1600" stroke="#f8d878" stroke-width="2.5" opacity="0.7"/>
+    
+    <!-- Reflection below -->
+    <line x1="-100" y1="1620" x2="2500" y2="1620" stroke="#c08040" stroke-width="3" opacity="0.15"/>
+    <line x1="-100" y1="1650" x2="2500" y2="1650" stroke="#a06830" stroke-width="2" opacity="0.08"/>
+    <line x1="-100" y1="1690" x2="2500" y2="1690" stroke="#805020" stroke-width="1.5" opacity="0.05"/>
+  </g>
+  
+  <!-- Stars above -->
+  <circle cx="300" cy="300" r="2.5" fill="#c0c8d8" opacity="0.5"/>
+  <circle cx="800" cy="150" r="2" fill="#c0c8d8" opacity="0.4"/>
+  <circle cx="1200" cy="400" r="3" fill="#c0c8d8" opacity="0.55"/>
+  <circle cx="1700" cy="200" r="2" fill="#c0c8d8" opacity="0.45"/>
+  <circle cx="2100" cy="350" r="2.5" fill="#c0c8d8" opacity="0.5"/>
+  <circle cx="500" cy="600" r="1.5" fill="#c0c8d8" opacity="0.35"/>
+  <circle cx="1500" cy="550" r="2" fill="#c0c8d8" opacity="0.3"/>
+  <circle cx="2000" cy="700" r="1.5" fill="#c0c8d8" opacity="0.3"/>
+  <circle cx="400" cy="900" r="2" fill="#c0c8d8" opacity="0.25"/>
+  <circle cx="1900" cy="850" r="1.5" fill="#c0c8d8" opacity="0.25"/>
+  <circle cx="1000" cy="750" r="2" fill="#c0c8d8" opacity="0.3"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

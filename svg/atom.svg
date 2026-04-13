@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="60" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="nucleusFill" cx="42%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#f5d465"/>
+      <stop offset="50%" stop-color="#e8b840"/>
+      <stop offset="100%" stop-color="#d4a030"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#f4ebda"/>
+  
+  <!-- Electron orbits - three ellipses at different angles -->
+  <g filter="url(#painted)">
+    <!-- Orbit 1 - horizontal-ish -->
+    <ellipse cx="1200" cy="1300" rx="850" ry="350" fill="none" stroke="#c89528" stroke-width="4.5" opacity="0.5" transform="rotate(-15, 1200, 1300)"/>
+    
+    <!-- Orbit 2 - tilted left -->
+    <ellipse cx="1200" cy="1300" rx="850" ry="350" fill="none" stroke="#d4a030" stroke-width="5.0" opacity="0.55" transform="rotate(45, 1200, 1300)"/>
+    
+    <!-- Orbit 3 - tilted right -->
+    <ellipse cx="1200" cy="1300" rx="850" ry="350" fill="none" stroke="#c49025" stroke-width="4.0" opacity="0.48" transform="rotate(-75, 1200, 1300)"/>
+    
+    <!-- Electrons - small bright circles on the orbits -->
+    <!-- Electron 1 on orbit 1 -->
+    <circle cx="580" cy="1120" r="28" fill="#e8b840" opacity="0.8"/>
+    <circle cx="580" cy="1120" r="18" fill="#f5d465" opacity="0.6"/>
+    
+    <!-- Electron 2 on orbit 2 -->
+    <circle cx="1750" cy="850" r="28" fill="#e8b840" opacity="0.8"/>
+    <circle cx="1750" cy="850" r="18" fill="#f5d465" opacity="0.6"/>
+    
+    <!-- Electron 3 on orbit 3 -->
+    <circle cx="750" cy="1800" r="28" fill="#e8b840" opacity="0.8"/>
+    <circle cx="750" cy="1800" r="18" fill="#f5d465" opacity="0.6"/>
+    
+    <!-- Nucleus - cluster of circles -->
+    <circle cx="1200" cy="1300" r="95" fill="#d4a030" opacity="0.2"/>
+    <circle cx="1200" cy="1300" r="75" fill="url(#nucleusFill)"/>
+    
+    <!-- Protons/neutrons in nucleus -->
+    <circle cx="1175" cy="1275" r="32" fill="#e8b840" opacity="0.5"/>
+    <circle cx="1225" cy="1285" r="30" fill="#d9a835" opacity="0.45"/>
+    <circle cx="1195" cy="1320" r="28" fill="#ecc555" opacity="0.4"/>
+    <circle cx="1215" cy="1270" r="26" fill="#d4a030" opacity="0.35"/>
+    
+    <!-- Nucleus highlight -->
+    <circle cx="1185" cy="1280" r="40" fill="#f0d070" opacity="0.2"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.25"/>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="270" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <linearGradient id="iceSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8e8f4"/>
+      <stop offset="100%" stop-color="#b0c8d8"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="url(#iceSky)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Glacier is geometric - flat shelves with sharp crevasse drops -->
+    <!-- Horizontal platforms connected by angled fractures -->
+    
+    <!-- Back shelf - highest, palest -->
+    <path d="M -100 800 L 400 780 L 420 850 L 900 830 L 930 900 L 1300 880 L 1320 800 L 1800 810 L 1850 880 L 2200 860 L 2500 840" 
+          fill="none" stroke="#90b8d0" stroke-width="4.5" opacity="0.3" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 2 -->
+    <path d="M -100 1050 L 300 1030 L 350 1120 L 500 1100 L 520 1040 L 850 1060 L 880 1150 L 1200 1130 L 1230 1050 L 1600 1070 L 1650 1160 L 1950 1140 L 2000 1060 L 2300 1080 L 2500 1060" 
+          fill="none" stroke="#80b0c8" stroke-width="5.5" opacity="0.35" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 3 - deeper crevasses -->
+    <path d="M -100 1300 L 200 1280 L 230 1400 L 280 1380 L 310 1290 L 700 1310 L 740 1430 L 780 1400 L 820 1300 L 1100 1320 L 1130 1440 L 1180 1300 L 1500 1320 L 1540 1450 L 1580 1420 L 1620 1310 L 2000 1330 L 2050 1460 L 2090 1430 L 2130 1320 L 2500 1340" 
+          fill="none" stroke="#70a8c0" stroke-width="6.5" opacity="0.4" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 4 -->
+    <path d="M -100 1580 L 350 1560 L 400 1700 L 450 1680 L 480 1570 L 800 1590 L 840 1720 L 900 1580 L 1250 1600 L 1300 1740 L 1340 1710 L 1380 1590 L 1750 1610 L 1800 1750 L 1850 1600 L 2150 1620 L 2200 1760 L 2250 1730 L 2280 1610 L 2500 1630" 
+          fill="none" stroke="#60a0b8" stroke-width="7.5" opacity="0.45" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 5 -->
+    <path d="M -100 1860 L 250 1840 L 300 2000 L 360 1960 L 400 1850 L 650 1870 L 700 2020 L 760 1860 L 1050 1880 L 1100 2040 L 1150 2000 L 1200 1870 L 1500 1890 L 1560 2050 L 1600 2010 L 1650 1880 L 1950 1900 L 2000 2060 L 2060 1890 L 2350 1910 L 2500 1900" 
+          fill="none" stroke="#5098b0" stroke-width="8.5" opacity="0.5" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 6 -->
+    <path d="M -100 2150 L 180 2130 L 240 2320 L 300 2280 L 350 2140 L 580 2160 L 640 2340 L 700 2150 L 980 2170 L 1050 2360 L 1100 2320 L 1150 2160 L 1420 2180 L 1480 2370 L 1540 2170 L 1820 2190 L 1880 2380 L 1940 2340 L 1980 2180 L 2250 2200 L 2320 2390 L 2380 2190 L 2500 2210" 
+          fill="none" stroke="#4890a8" stroke-width="9" opacity="0.52" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 7 -->
+    <path d="M -100 2450 L 300 2430 L 380 2650 L 440 2600 L 500 2440 L 750 2460 L 820 2670 L 900 2450 L 1200 2470 L 1280 2680 L 1340 2640 L 1400 2460 L 1700 2480 L 1780 2690 L 1840 2480 L 2100 2500 L 2180 2710 L 2240 2660 L 2300 2490 L 2500 2510" 
+          fill="none" stroke="#3888a0" stroke-width="9.5" opacity="0.52" stroke-linejoin="bevel"/>
+    
+    <!-- Shelf 8 - nearest -->
+    <path d="M -100 2750 L 200 2730 L 300 2980 L 380 2920 L 440 2740 L 680 2760 L 760 2990 L 860 2750 L 1150 2770 L 1240 3000 L 1320 2960 L 1380 2760 L 1650 2780 L 1740 3010 L 1840 2770 L 2100 2790 L 2200 3020 L 2280 2980 L 2340 2780 L 2500 2800" 
+          fill="none" stroke="#307890" stroke-width="10" opacity="0.5" stroke-linejoin="bevel"/>
+    
+    <!-- Deep crevasse shadows -->
+    <line x1="230" y1="1400" x2="240" y2="1560" stroke="#205868" stroke-width="2" opacity="0.2"/>
+    <line x1="740" y1="1430" x2="750" y2="1590" stroke="#205868" stroke-width="2" opacity="0.2"/>
+    <line x1="1130" y1="1440" x2="1140" y2="1600" stroke="#205868" stroke-width="2" opacity="0.2"/>
+    <line x1="1540" y1="1450" x2="1550" y2="1610" stroke="#205868" stroke-width="2" opacity="0.2"/>
+    <line x1="2050" y1="1460" x2="2060" y2="1630" stroke="#205868" stroke-width="2" opacity="0.2"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>

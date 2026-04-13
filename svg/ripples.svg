@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="360" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#181410"/>
+  
+  <g filter="url(#painted)">
+    <!-- Concentric rings expanding outward - alternating thickness -->
+    <circle cx="1200" cy="1600" r="80" fill="none" stroke="#e8c050" stroke-width="6" opacity="0.55"/>
+    <circle cx="1200" cy="1600" r="150" fill="none" stroke="#d8b040" stroke-width="3.5" opacity="0.48"/>
+    <circle cx="1200" cy="1600" r="230" fill="none" stroke="#e0b848" stroke-width="5.5" opacity="0.5"/>
+    <circle cx="1200" cy="1600" r="310" fill="none" stroke="#d0a838" stroke-width="3" opacity="0.45"/>
+    <circle cx="1200" cy="1600" r="400" fill="none" stroke="#d8b040" stroke-width="5" opacity="0.48"/>
+    <circle cx="1200" cy="1600" r="490" fill="none" stroke="#c8a030" stroke-width="3.5" opacity="0.42"/>
+    <circle cx="1200" cy="1600" r="580" fill="none" stroke="#d0a838" stroke-width="4.5" opacity="0.45"/>
+    <circle cx="1200" cy="1600" r="680" fill="none" stroke="#c09828" stroke-width="3" opacity="0.4"/>
+    <circle cx="1200" cy="1600" r="780" fill="none" stroke="#c8a030" stroke-width="5" opacity="0.42"/>
+    <circle cx="1200" cy="1600" r="880" fill="none" stroke="#b89020" stroke-width="3.5" opacity="0.38"/>
+    <circle cx="1200" cy="1600" r="990" fill="none" stroke="#c09828" stroke-width="4.5" opacity="0.4"/>
+    <circle cx="1200" cy="1600" r="1100" fill="none" stroke="#b08818" stroke-width="3" opacity="0.35"/>
+    <circle cx="1200" cy="1600" r="1210" fill="none" stroke="#b89020" stroke-width="4" opacity="0.38"/>
+    <circle cx="1200" cy="1600" r="1330" fill="none" stroke="#a88018" stroke-width="3.5" opacity="0.32"/>
+    <circle cx="1200" cy="1600" r="1450" fill="none" stroke="#b08818" stroke-width="3.5" opacity="0.35"/>
+    <circle cx="1200" cy="1600" r="1580" fill="none" stroke="#a07810" stroke-width="3" opacity="0.28"/>
+    <circle cx="1200" cy="1600" r="1710" fill="none" stroke="#a88018" stroke-width="3" opacity="0.25"/>
+    
+    <!-- Center dot -->
+    <circle cx="1200" cy="1600" r="15" fill="#e8c858" opacity="0.6"/>
+    <circle cx="1200" cy="1600" r="8" fill="#f0d868" opacity="0.4"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.2"/>
+</svg>

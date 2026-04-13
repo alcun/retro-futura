@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="30" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <radialGradient id="sunFill" cx="40%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#fff0c0"/>
+      <stop offset="40%" stop-color="#f5d060"/>
+      <stop offset="100%" stop-color="#e0a030"/>
+    </radialGradient>
+    <radialGradient id="mercuryFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#b0a898"/>
+      <stop offset="100%" stop-color="#787068"/>
+    </radialGradient>
+    <radialGradient id="venusFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#e8c898"/>
+      <stop offset="100%" stop-color="#c09060"/>
+    </radialGradient>
+    <radialGradient id="earthFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#70b8d0"/>
+      <stop offset="50%" stop-color="#4090b0"/>
+      <stop offset="100%" stop-color="#286878"/>
+    </radialGradient>
+    <radialGradient id="marsFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#d88050"/>
+      <stop offset="100%" stop-color="#a04828"/>
+    </radialGradient>
+    <radialGradient id="jupiterFill" cx="40%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#e0c8a0"/>
+      <stop offset="40%" stop-color="#c8a070"/>
+      <stop offset="100%" stop-color="#a07848"/>
+    </radialGradient>
+    <radialGradient id="saturnFill" cx="40%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#e8d8a8"/>
+      <stop offset="40%" stop-color="#d0b878"/>
+      <stop offset="100%" stop-color="#b09050"/>
+    </radialGradient>
+    <radialGradient id="uranusFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#a8dce8"/>
+      <stop offset="100%" stop-color="#60a0b8"/>
+    </radialGradient>
+    <radialGradient id="neptuneFill" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#7088d0"/>
+      <stop offset="100%" stop-color="#3850a0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Deep space background -->
+  <rect width="2400" height="3200" fill="#0a0a18"/>
+  
+  <!-- Subtle nebula glow -->
+  <ellipse cx="800" cy="1200" rx="600" ry="800" fill="#1a1030" opacity="0.5"/>
+  <ellipse cx="1800" cy="2200" rx="500" ry="600" fill="#0a1828" opacity="0.4"/>
+  
+  <!-- Star field -->
+  <circle cx="150" cy="120" r="2" fill="#e0d8f0" opacity="0.7"/>
+  <circle cx="480" cy="80" r="1.5" fill="#e0d8f0" opacity="0.5"/>
+  <circle cx="780" cy="200" r="2.5" fill="#e0d8f0" opacity="0.6"/>
+  <circle cx="1100" cy="100" r="1.5" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="1500" cy="180" r="2" fill="#e0d8f0" opacity="0.55"/>
+  <circle cx="1850" cy="90" r="2.5" fill="#e0d8f0" opacity="0.65"/>
+  <circle cx="2200" cy="150" r="1.5" fill="#e0d8f0" opacity="0.5"/>
+  <circle cx="300" cy="350" r="1.5" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="650" cy="420" r="2" fill="#e0d8f0" opacity="0.5"/>
+  <circle cx="2050" cy="380" r="1.5" fill="#e0d8f0" opacity="0.45"/>
+  <circle cx="1350" cy="500" r="2" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="400" cy="2800" r="2" fill="#e0d8f0" opacity="0.5"/>
+  <circle cx="900" cy="2950" r="1.5" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="1700" cy="2850" r="2.5" fill="#e0d8f0" opacity="0.55"/>
+  <circle cx="2100" cy="3000" r="1.5" fill="#e0d8f0" opacity="0.45"/>
+  <circle cx="200" cy="3050" r="2" fill="#e0d8f0" opacity="0.5"/>
+  <circle cx="1200" cy="3100" r="1.5" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="550" cy="700" r="1.5" fill="#e0d8f0" opacity="0.35"/>
+  <circle cx="1900" cy="650" r="2" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="100" cy="1500" r="1.5" fill="#e0d8f0" opacity="0.35"/>
+  <circle cx="2300" cy="1800" r="2" fill="#e0d8f0" opacity="0.4"/>
+  <circle cx="350" cy="2200" r="1.5" fill="#e0d8f0" opacity="0.3"/>
+  <circle cx="2100" cy="2500" r="2" fill="#e0d8f0" opacity="0.45"/>
+  
+  <!-- Vertical alignment line - subtle -->
+  <line x1="1200" y1="100" x2="1200" y2="3100" stroke="#303050" stroke-width="1" opacity="0.3" stroke-dasharray="8,12"/>
+  
+  <!-- PLANETS - vertical arrangement, largest in middle -->
+  <g filter="url(#painted)">
+    <!-- Sun - partial, at top -->
+    <circle cx="1200" cy="200" r="160" fill="url(#sunFill)" filter="url(#glow)"/>
+    <circle cx="1200" cy="200" r="160" fill="#f5d060" opacity="0.15"/>
+    
+    <!-- Mercury -->
+    <circle cx="1200" cy="550" r="22" fill="url(#mercuryFill)"/>
+    
+    <!-- Venus -->
+    <circle cx="1200" cy="750" r="45" fill="url(#venusFill)"/>
+    
+    <!-- Earth -->
+    <circle cx="1200" cy="1000" r="48" fill="url(#earthFill)"/>
+    <!-- Earth's moon -->
+    <circle cx="1280" cy="985" r="12" fill="#b0b0a8" opacity="0.7"/>
+    
+    <!-- Mars -->
+    <circle cx="1200" cy="1240" r="32" fill="url(#marsFill)"/>
+    
+    <!-- Jupiter - biggest -->
+    <circle cx="1200" cy="1580" r="120" fill="url(#jupiterFill)"/>
+    <!-- Jupiter bands -->
+    <ellipse cx="1200" cy="1545" rx="118" ry="12" fill="#b88850" opacity="0.3"/>
+    <ellipse cx="1200" cy="1570" rx="116" ry="10" fill="#c09860" opacity="0.25"/>
+    <ellipse cx="1200" cy="1600" rx="118" ry="14" fill="#a07040" opacity="0.3"/>
+    <ellipse cx="1200" cy="1625" rx="115" ry="10" fill="#c8a868" opacity="0.2"/>
+    <!-- Great red spot -->
+    <ellipse cx="1260" cy="1590" rx="25" ry="18" fill="#c06030" opacity="0.4"/>
+    
+    <!-- Saturn -->
+    <circle cx="1200" cy="1920" r="95" fill="url(#saturnFill)"/>
+    <!-- Saturn's rings -->
+    <ellipse cx="1200" cy="1920" rx="175" ry="35" fill="none" stroke="#c8b070" stroke-width="12" opacity="0.5"/>
+    <ellipse cx="1200" cy="1920" rx="195" ry="40" fill="none" stroke="#b8a060" stroke-width="6" opacity="0.35"/>
+    <ellipse cx="1200" cy="1920" rx="155" ry="30" fill="none" stroke="#d0c080" stroke-width="8" opacity="0.4"/>
+    
+    <!-- Uranus -->
+    <circle cx="1200" cy="2250" r="55" fill="url(#uranusFill)"/>
+    <!-- Uranus ring - thin, tilted -->
+    <ellipse cx="1200" cy="2250" rx="80" ry="60" fill="none" stroke="#80b8c8" stroke-width="3" opacity="0.4" transform="rotate(15, 1200, 2250)"/>
+    
+    <!-- Neptune -->
+    <circle cx="1200" cy="2500" r="50" fill="url(#neptuneFill)"/>
+    
+    <!-- Pluto - tiny, because why not -->
+    <circle cx="1200" cy="2700" r="10" fill="#a89888" opacity="0.6"/>
+  </g>
+  
+  <!-- Orbit distance markers - subtle horizontal lines -->
+  <g stroke="#303050" stroke-width="0.5" opacity="0.2">
+    <line x1="200" y1="550" x2="2200" y2="550"/>
+    <line x1="200" y1="750" x2="2200" y2="750"/>
+    <line x1="200" y1="1000" x2="2200" y2="1000"/>
+    <line x1="200" y1="1240" x2="2200" y2="1240"/>
+    <line x1="200" y1="1580" x2="2200" y2="1580"/>
+    <line x1="200" y1="1920" x2="2200" y2="1920"/>
+    <line x1="200" y1="2250" x2="2200" y2="2250"/>
+    <line x1="200" y1="2500" x2="2200" y2="2500"/>
+    <line x1="200" y1="2700" x2="2200" y2="2700"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>
