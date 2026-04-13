@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="540" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="lavaGlow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="lavaGlowTight">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="skyGlow" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#e05010" stop-opacity="0.2"/>
+      <stop offset="40%" stop-color="#801008" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0a0204" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#080204"/>
+  <rect width="2400" height="3200" fill="url(#skyGlow)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Wide atmospheric glow from eruption -->
+    <path d="M 800 1200 L 1200 -200 L 1600 1200" fill="#c04010" opacity="0.03" filter="url(#lavaGlow)"/>
+    <path d="M 900 1200 L 1200 -100 L 1500 1200" fill="#e06020" opacity="0.05" filter="url(#lavaGlow)"/>
+    
+    <!-- Main eruption fountain - wide spreading spray -->
+    <!-- Outer spray envelope -->
+    <path d="M 1200 1200 C 1100 800 900 400 750 100 C 700 -50 680 -100 700 -150" 
+          stroke="#c04010" stroke-width="6" fill="none" opacity="0.2" stroke-linecap="round"/>
+    <path d="M 1200 1200 C 1300 800 1500 400 1650 100 C 1700 -50 1720 -100 1700 -150" 
+          stroke="#c04010" stroke-width="6" fill="none" opacity="0.2" stroke-linecap="round"/>
+    
+    <!-- Mid spray lines -->
+    <path d="M 1200 1200 C 1130 850 1000 500 900 200 C 850 50 840 -50 860 -100" 
+          stroke="#d05818" stroke-width="5" fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 1200 1200 C 1270 850 1400 500 1500 200 C 1550 50 1560 -50 1540 -100" 
+          stroke="#d05818" stroke-width="5" fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 1200 1200 C 1150 900 1050 550 980 300 C 940 150 930 50 945 -20" 
+          stroke="#e06828" stroke-width="4" fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 1200 1200 C 1250 900 1350 550 1420 300 C 1460 150 1470 50 1455 -20" 
+          stroke="#e06828" stroke-width="4" fill="none" opacity="0.3" stroke-linecap="round"/>
+    
+    <!-- Inner hot lines -->
+    <path d="M 1200 1200 C 1180 900 1120 600 1080 350 C 1050 180 1050 50 1060 -30" 
+          stroke="#f08030" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+    <path d="M 1200 1200 C 1220 900 1280 600 1320 350 C 1350 180 1350 50 1340 -30" 
+          stroke="#f08030" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+    
+    <!-- White hot centre column -->
+    <path d="M 1200 1200 C 1195 950 1180 650 1170 400 C 1160 200 1170 80 1180 -20" 
+          stroke="#f8a838" stroke-width="5" fill="none" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <path d="M 1200 1200 C 1205 950 1220 650 1230 400 C 1240 200 1230 80 1220 -20" 
+          stroke="#f8a838" stroke-width="5" fill="none" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <line x1="1200" y1="1200" x2="1200" y2="-50" stroke="#ffc858" stroke-width="4" opacity="0.5"/>
+    <line x1="1200" y1="1200" x2="1200" y2="0" stroke="#ffe080" stroke-width="2" opacity="0.6"/>
+    
+    <!-- LAVA BOMBS - bright arcing projectiles, scattered wide -->
+    <!-- Left arc - high -->
+    <circle cx="750" cy="100" r="8" fill="#f8b040" opacity="0.55" filter="url(#lavaGlowTight)"/>
+    <circle cx="820" cy="250" r="7" fill="#f0a038" opacity="0.5" filter="url(#lavaGlowTight)"/>
+    <circle cx="680" cy="350" r="6" fill="#e89030" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <circle cx="900" cy="180" r="6.5" fill="#f8b848" opacity="0.5" filter="url(#lavaGlowTight)"/>
+    <circle cx="780" cy="500" r="5.5" fill="#e08028" opacity="0.4" filter="url(#lavaGlowTight)"/>
+    <circle cx="620" cy="550" r="5" fill="#d07020" opacity="0.35" filter="url(#lavaGlowTight)"/>
+    <circle cx="850" cy="420" r="6" fill="#f09838" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <circle cx="720" cy="680" r="5" fill="#d06818" opacity="0.3" filter="url(#lavaGlowTight)"/>
+    <circle cx="550" cy="750" r="4.5" fill="#c06018" opacity="0.25" filter="url(#lavaGlowTight)"/>
+    <circle cx="940" cy="600" r="5.5" fill="#e88830" opacity="0.4" filter="url(#lavaGlowTight)"/>
+    <circle cx="650" cy="200" r="5" fill="#fcc048" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    
+    <!-- Right arc - high -->
+    <circle cx="1650" cy="80" r="8" fill="#f8b040" opacity="0.55" filter="url(#lavaGlowTight)"/>
+    <circle cx="1580" cy="230" r="7" fill="#f0a038" opacity="0.5" filter="url(#lavaGlowTight)"/>
+    <circle cx="1720" cy="320" r="6" fill="#e89030" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <circle cx="1500" cy="160" r="6.5" fill="#f8b848" opacity="0.5" filter="url(#lavaGlowTight)"/>
+    <circle cx="1620" cy="480" r="5.5" fill="#e08028" opacity="0.4" filter="url(#lavaGlowTight)"/>
+    <circle cx="1780" cy="520" r="5" fill="#d07020" opacity="0.35" filter="url(#lavaGlowTight)"/>
+    <circle cx="1550" cy="400" r="6" fill="#f09838" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    <circle cx="1680" cy="650" r="5" fill="#d06818" opacity="0.3" filter="url(#lavaGlowTight)"/>
+    <circle cx="1850" cy="720" r="4.5" fill="#c06018" opacity="0.25" filter="url(#lavaGlowTight)"/>
+    <circle cx="1460" cy="580" r="5.5" fill="#e88830" opacity="0.4" filter="url(#lavaGlowTight)"/>
+    <circle cx="1750" cy="180" r="5" fill="#fcc048" opacity="0.45" filter="url(#lavaGlowTight)"/>
+    
+    <!-- Highest flung bombs -->
+    <circle cx="1100" cy="-50" r="5" fill="#fcd060" opacity="0.4" filter="url(#lavaGlowTight)"/>
+    <circle cx="1300" cy="-80" r="4.5" fill="#fcd060" opacity="0.38" filter="url(#lavaGlowTight)"/>
+    <circle cx="1050" cy="30" r="4" fill="#f8c050" opacity="0.35" filter="url(#lavaGlowTight)"/>
+    <circle cx="1350" cy="20" r="4" fill="#f8c050" opacity="0.35" filter="url(#lavaGlowTight)"/>
+    
+    <!-- Falling bombs - lower, dimmer, on the flanks -->
+    <circle cx="500" cy="950" r="4" fill="#b05818" opacity="0.2" filter="url(#lavaGlowTight)"/>
+    <circle cx="450" cy="1100" r="3.5" fill="#a05010" opacity="0.18" filter="url(#lavaGlowTight)"/>
+    <circle cx="1900" cy="920" r="4" fill="#b05818" opacity="0.2" filter="url(#lavaGlowTight)"/>
+    <circle cx="1950" cy="1080" r="3.5" fill="#a05010" opacity="0.18" filter="url(#lavaGlowTight)"/>
+    
+    <!-- Lava flows down mountain - thick, bright -->
+    <!-- Main left flow -->
+    <path d="M 1200 1200 C 1150 1350 1050 1550 950 1800 C 870 2000 800 2250 770 2500" 
+          stroke="#c04010" stroke-width="14" fill="none" opacity="0.15" filter="url(#lavaGlow)"/>
+    <path d="M 1200 1200 C 1150 1350 1050 1550 950 1800 C 870 2000 800 2250 770 2500" 
+          stroke="#e06020" stroke-width="6" fill="none" opacity="0.4"/>
+    <path d="M 1200 1200 C 1150 1350 1050 1550 950 1800 C 870 2000 800 2250 770 2500" 
+          stroke="#f08030" stroke-width="2.5" fill="none" opacity="0.55"/>
+    
+    <!-- Main right flow -->
+    <path d="M 1200 1200 C 1250 1350 1350 1550 1430 1750 C 1500 1950 1540 2150 1560 2400" 
+          stroke="#c04010" stroke-width="12" fill="none" opacity="0.15" filter="url(#lavaGlow)"/>
+    <path d="M 1200 1200 C 1250 1350 1350 1550 1430 1750 C 1500 1950 1540 2150 1560 2400" 
+          stroke="#e06020" stroke-width="5" fill="none" opacity="0.35"/>
+    <path d="M 1200 1200 C 1250 1350 1350 1550 1430 1750 C 1500 1950 1540 2150 1560 2400" 
+          stroke="#f08030" stroke-width="2" fill="none" opacity="0.5"/>
+    
+    <!-- Centre flow -->
+    <path d="M 1200 1200 C 1210 1400 1230 1650 1240 1900 C 1250 2150 1250 2350 1250 2600" 
+          stroke="#c04010" stroke-width="10" fill="none" opacity="0.12" filter="url(#lavaGlow)"/>
+    <path d="M 1200 1200 C 1210 1400 1230 1650 1240 1900 C 1250 2150 1250 2350 1250 2600" 
+          stroke="#d85818" stroke-width="4" fill="none" opacity="0.3"/>
+    <path d="M 1200 1200 C 1210 1400 1230 1650 1240 1900 C 1250 2150 1250 2350 1250 2600" 
+          stroke="#f07828" stroke-width="1.5" fill="none" opacity="0.4"/>
+    
+    <!-- Mountain silhouette - sharp volcanic cone -->
+    <path d="M -100 2700 L 350 2350 L 600 2100 L 800 1800 L 950 1500 L 1080 1280 L 1160 1210 L 1200 1200 L 1240 1210 L 1320 1280 L 1450 1500 L 1600 1800 L 1800 2100 L 2050 2350 L 2500 2700 L 2500 3200 L -100 3200 Z" 
+          fill="#060102" opacity="0.93"/>
+    
+    <!-- Crater rim — bright hot edge -->
+    <path d="M 1100 1250 L 1160 1210 L 1200 1200 L 1240 1210 L 1300 1250" 
+          stroke="#e05020" stroke-width="8" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M 1120 1240 L 1170 1212 L 1200 1205 L 1230 1212 L 1280 1240" 
+          stroke="#f08030" stroke-width="4" fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 1150 1225 L 1185 1210 L 1200 1208 L 1215 1210 L 1250 1225" 
+          stroke="#ffa040" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.1"/>
+</svg>

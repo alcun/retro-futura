@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="550" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="boltGlow">
+      <feGaussianBlur stdDeviation="25" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="boltGlowTight">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="stormLight" cx="45%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#281838" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#080410" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#080410"/>
+  <rect width="2400" height="3200" fill="url(#stormLight)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Main bolt path - sharp zigzag, abrupt angle changes like real lightning -->
+    <!-- Wide atmospheric glow -->
+    <path d="M 1150 -50 L 1210 180 L 1120 200 L 1250 520 L 1140 550 L 1080 680 L 1200 700 L 1280 920 L 1150 960 L 1220 1180 L 1100 1220 L 1180 1450 L 1250 1440 L 1310 1680 L 1200 1720 L 1150 1900 L 1260 1920 L 1220 2100 L 1300 2120 L 1250 2350 L 1180 2380 L 1230 2600 L 1280 2750" 
+          stroke="#4030a0" stroke-width="160" fill="none" opacity="0.04" filter="url(#boltGlow)" stroke-linejoin="bevel"/>
+    
+    <!-- Mid purple glow -->
+    <path d="M 1150 -50 L 1210 180 L 1120 200 L 1250 520 L 1140 550 L 1080 680 L 1200 700 L 1280 920 L 1150 960 L 1220 1180 L 1100 1220 L 1180 1450 L 1250 1440 L 1310 1680 L 1200 1720 L 1150 1900 L 1260 1920 L 1220 2100 L 1300 2120 L 1250 2350 L 1180 2380 L 1230 2600 L 1280 2750" 
+          stroke="#6050c0" stroke-width="60" fill="none" opacity="0.07" filter="url(#boltGlow)" stroke-linejoin="bevel"/>
+    
+    <!-- Electric blue glow -->
+    <path d="M 1150 -50 L 1210 180 L 1120 200 L 1250 520 L 1140 550 L 1080 680 L 1200 700 L 1280 920 L 1150 960 L 1220 1180 L 1100 1220 L 1180 1450 L 1250 1440 L 1310 1680 L 1200 1720 L 1150 1900 L 1260 1920 L 1220 2100 L 1300 2120 L 1250 2350 L 1180 2380 L 1230 2600 L 1280 2750" 
+          stroke="#8878e0" stroke-width="22" fill="none" opacity="0.15" filter="url(#boltGlowTight)" stroke-linejoin="bevel"/>
+    
+    <!-- Bright bolt -->
+    <path d="M 1150 -50 L 1210 180 L 1120 200 L 1250 520 L 1140 550 L 1080 680 L 1200 700 L 1280 920 L 1150 960 L 1220 1180 L 1100 1220 L 1180 1450 L 1250 1440 L 1310 1680 L 1200 1720 L 1150 1900 L 1260 1920 L 1220 2100 L 1300 2120 L 1250 2350 L 1180 2380 L 1230 2600 L 1280 2750" 
+          stroke="#d0c8ff" stroke-width="5" fill="none" opacity="0.85" stroke-linejoin="bevel"/>
+    
+    <!-- White hot core -->
+    <path d="M 1150 -50 L 1210 180 L 1120 200 L 1250 520 L 1140 550 L 1080 680 L 1200 700 L 1280 920 L 1150 960 L 1220 1180 L 1100 1220 L 1180 1450 L 1250 1440 L 1310 1680 L 1200 1720 L 1150 1900 L 1260 1920 L 1220 2100 L 1300 2120 L 1250 2350 L 1180 2380 L 1230 2600 L 1280 2750" 
+          stroke="#ffffff" stroke-width="2" fill="none" opacity="0.9" stroke-linejoin="bevel"/>
+    
+    <!-- Branch 1 - upper left, sharp zigzag -->
+    <path d="M 1120 200 L 1020 320 L 1060 340 L 960 480 L 1000 500 L 920 650" 
+          stroke="#8878e0" stroke-width="10" fill="none" opacity="0.1" filter="url(#boltGlowTight)" stroke-linejoin="bevel"/>
+    <path d="M 1120 200 L 1020 320 L 1060 340 L 960 480 L 1000 500 L 920 650" 
+          stroke="#d0c8ff" stroke-width="3" fill="none" opacity="0.5" stroke-linejoin="bevel"/>
+    <path d="M 1120 200 L 1020 320 L 1060 340 L 960 480 L 1000 500 L 920 650" 
+          stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.4" stroke-linejoin="bevel"/>
+    
+    <!-- Sub-branch off branch 1 -->
+    <path d="M 960 480 L 880 530 L 910 550 L 840 640" 
+          stroke="#d0c8ff" stroke-width="2" fill="none" opacity="0.3" stroke-linejoin="bevel"/>
+    
+    <!-- Branch 2 - upper right -->
+    <path d="M 1250 520 L 1380 600 L 1340 630 L 1450 760 L 1410 790 L 1500 920" 
+          stroke="#8878e0" stroke-width="10" fill="none" opacity="0.1" filter="url(#boltGlowTight)" stroke-linejoin="bevel"/>
+    <path d="M 1250 520 L 1380 600 L 1340 630 L 1450 760 L 1410 790 L 1500 920" 
+          stroke="#d0c8ff" stroke-width="3" fill="none" opacity="0.5" stroke-linejoin="bevel"/>
+    <path d="M 1250 520 L 1380 600 L 1340 630 L 1450 760 L 1410 790 L 1500 920" 
+          stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.4" stroke-linejoin="bevel"/>
+    
+    <!-- Sub-branch off branch 2 -->
+    <path d="M 1450 760 L 1540 810 L 1510 840 L 1580 930" 
+          stroke="#d0c8ff" stroke-width="2" fill="none" opacity="0.3" stroke-linejoin="bevel"/>
+    
+    <!-- Branch 3 - mid left -->
+    <path d="M 1100 1220 L 980 1320 L 1020 1350 L 920 1480" 
+          stroke="#8878e0" stroke-width="8" fill="none" opacity="0.08" filter="url(#boltGlowTight)" stroke-linejoin="bevel"/>
+    <path d="M 1100 1220 L 980 1320 L 1020 1350 L 920 1480" 
+          stroke="#d0c8ff" stroke-width="2.5" fill="none" opacity="0.4" stroke-linejoin="bevel"/>
+    
+    <!-- Branch 4 - mid right -->
+    <path d="M 1310 1680 L 1430 1750 L 1400 1780 L 1500 1880" 
+          stroke="#8878e0" stroke-width="8" fill="none" opacity="0.08" filter="url(#boltGlowTight)" stroke-linejoin="bevel"/>
+    <path d="M 1310 1680 L 1430 1750 L 1400 1780 L 1500 1880" 
+          stroke="#d0c8ff" stroke-width="2.5" fill="none" opacity="0.4" stroke-linejoin="bevel"/>
+    
+    <!-- Branch 5 - lower -->
+    <path d="M 1220 2100 L 1120 2200 L 1150 2230 L 1060 2350" 
+          stroke="#d0c8ff" stroke-width="2" fill="none" opacity="0.3" stroke-linejoin="bevel"/>
+    
+    <!-- Tiny forks - the really fine detail -->
+    <path d="M 1020 320 L 970 380" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1380 600 L 1430 560" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1280 920 L 1350 980" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1150 960 L 1080 1020" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1250 1440 L 1330 1500" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1200 1720 L 1120 1780" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    <path d="M 1300 2120 L 1380 2180" stroke="#d0c8ff" stroke-width="1.5" fill="none" opacity="0.2"/>
+    
+    <!-- Ground strike flash -->
+    <circle cx="1280" cy="2750" r="40" fill="#6058c0" opacity="0.1" filter="url(#boltGlow)"/>
+    <circle cx="1280" cy="2750" r="18" fill="#b0a8e0" opacity="0.25" filter="url(#boltGlowTight)"/>
+    <circle cx="1280" cy="2750" r="6" fill="#e8e0ff" opacity="0.5"/>
+  </g>
+  
+  <!-- Ground -->
+  <path d="M -100 2800 L 400 2740 L 700 2770 L 1000 2730 L 1280 2710 L 1500 2750 L 1800 2730 L 2100 2760 L 2500 2720 L 2500 3200 L -100 3200 Z" 
+        fill="#040208" opacity="0.95" filter="url(#painted)"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.1"/>
+</svg>

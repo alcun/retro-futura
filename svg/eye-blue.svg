@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="560" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="irisBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#88c8e8"/>
+      <stop offset="25%" stop-color="#5098c8"/>
+      <stop offset="55%" stop-color="#3070a0"/>
+      <stop offset="100%" stop-color="#183858"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#0c0808"/>
+  
+  <g filter="url(#painted)">
+    <rect width="2400" height="3200" fill="#1a1210" opacity="0.5"/>
+    
+    <!-- Eye shape -->
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600 C 1900 2000 1500 2250 1200 2300 C 900 2250 500 2000 200 1600 Z" fill="#d0c8c0" opacity="0.7"/>
+    
+    <!-- Corner pink -->
+    <ellipse cx="300" cy="1600" rx="120" ry="80" fill="#a06050" opacity="0.15"/>
+    <ellipse cx="2100" cy="1600" rx="120" ry="80" fill="#a06050" opacity="0.12"/>
+    
+    <!-- Iris -->
+    <circle cx="1200" cy="1600" r="380" fill="url(#irisBlue)" opacity="0.85"/>
+    
+    <!-- Limbal ring -->
+    <circle cx="1200" cy="1600" r="378" fill="none" stroke="#101830" stroke-width="8" opacity="0.5"/>
+    
+    <!-- Iris fibre lines -->
+    <g stroke-linecap="round" opacity="0.3">
+      <line x1="1200" y1="1280" x2="1200" y2="1220" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1280" y1="1290" x2="1320" y2="1235" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="1350" y1="1320" x2="1410" y2="1275" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1400" y1="1370" x2="1475" y2="1340" stroke="#4888b0" stroke-width="1.5"/>
+      <line x1="1440" y1="1440" x2="1520" y2="1420" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1460" y1="1520" x2="1545" y2="1510" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="1460" y1="1600" x2="1580" y2="1600" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1460" y1="1680" x2="1545" y2="1690" stroke="#4888b0" stroke-width="1.5"/>
+      <line x1="1440" y1="1760" x2="1520" y2="1780" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1400" y1="1830" x2="1475" y2="1860" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="1350" y1="1880" x2="1410" y2="1925" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1280" y1="1910" x2="1320" y2="1965" stroke="#4888b0" stroke-width="1.5"/>
+      <line x1="1200" y1="1920" x2="1200" y2="1980" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1120" y1="1910" x2="1080" y2="1965" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="1050" y1="1880" x2="990" y2="1925" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1000" y1="1830" x2="925" y2="1860" stroke="#4888b0" stroke-width="1.5"/>
+      <line x1="960" y1="1760" x2="880" y2="1780" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="940" y1="1680" x2="855" y2="1690" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="940" y1="1600" x2="820" y2="1600" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="940" y1="1520" x2="855" y2="1510" stroke="#4888b0" stroke-width="1.5"/>
+      <line x1="960" y1="1440" x2="880" y2="1420" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1000" y1="1370" x2="925" y2="1340" stroke="#5898c0" stroke-width="1.8"/>
+      <line x1="1050" y1="1320" x2="990" y2="1275" stroke="#70b8d8" stroke-width="2"/>
+      <line x1="1120" y1="1290" x2="1080" y2="1235" stroke="#4888b0" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Colour variation rings -->
+    <circle cx="1200" cy="1600" r="300" fill="none" stroke="#4890b8" stroke-width="3" opacity="0.15"/>
+    <circle cx="1200" cy="1600" r="250" fill="none" stroke="#60a8d0" stroke-width="2" opacity="0.12"/>
+    
+    <!-- Warm flecks near pupil - real blue eyes often have gold near the centre -->
+    <circle cx="1200" cy="1600" r="180" fill="none" stroke="#806830" stroke-width="8" opacity="0.08"/>
+    <circle cx="1160" cy="1560" r="8" fill="#907040" opacity="0.1"/>
+    <circle cx="1240" cy="1550" r="6" fill="#907040" opacity="0.08"/>
+    <circle cx="1230" cy="1640" r="7" fill="#907040" opacity="0.08"/>
+    
+    <!-- Dark ring around pupil -->
+    <circle cx="1200" cy="1600" r="160" fill="none" stroke="#182840" stroke-width="15" opacity="0.2"/>
+    
+    <!-- Pupil -->
+    <circle cx="1200" cy="1600" r="140" fill="#040408" opacity="0.95"/>
+    
+    <!-- Catch lights -->
+    <circle cx="1140" cy="1530" r="40" fill="#f8f0e8" opacity="0.6"/>
+    <circle cx="1140" cy="1530" r="25" fill="#ffffff" opacity="0.7"/>
+    <circle cx="1280" cy="1680" r="15" fill="#f0e8e0" opacity="0.3"/>
+    
+    <!-- Upper lid shadow -->
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600" fill="none" stroke="#0c0808" stroke-width="25" opacity="0.4"/>
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600" fill="none" stroke="#0c0808" stroke-width="12" opacity="0.6"/>
+    
+    <!-- Lower lid -->
+    <path d="M 200 1600 C 500 2000 900 2250 1200 2300 C 1500 2250 1900 2000 2200 1600" fill="none" stroke="#181010" stroke-width="8" opacity="0.4"/>
+    
+    <!-- Lashes -->
+    <g stroke="#0c0808" stroke-linecap="round" opacity="0.7" fill="none">
+      <path d="M 500 1280 C 490 1230 480 1180 470 1120" stroke-width="3"/>
+      <path d="M 600 1180 C 585 1120 570 1060 560 1000" stroke-width="3.5"/>
+      <path d="M 700 1100 C 680 1030 660 960 650 890" stroke-width="3.5"/>
+      <path d="M 820 1030 C 800 960 780 880 770 810" stroke-width="4"/>
+      <path d="M 950 980 C 930 900 910 820 905 750" stroke-width="4"/>
+      <path d="M 1080 950 C 1065 870 1050 790 1048 720" stroke-width="4"/>
+      <path d="M 1200 940 C 1195 860 1190 780 1192 700" stroke-width="3.5"/>
+      <path d="M 1320 950 C 1335 870 1350 790 1352 720" stroke-width="4"/>
+      <path d="M 1450 980 C 1470 900 1490 820 1495 750" stroke-width="4"/>
+      <path d="M 1580 1030 C 1600 960 1620 880 1630 810" stroke-width="4"/>
+      <path d="M 1700 1100 C 1720 1030 1740 960 1750 890" stroke-width="3.5"/>
+      <path d="M 1800 1180 C 1815 1120 1830 1060 1840 1000" stroke-width="3.5"/>
+      <path d="M 1900 1280 C 1910 1230 1920 1180 1930 1120" stroke-width="3"/>
+    </g>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

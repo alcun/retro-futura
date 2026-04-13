@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="530" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="irisGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a030"/>
+      <stop offset="35%" stop-color="#c08020"/>
+      <stop offset="70%" stop-color="#886018"/>
+      <stop offset="100%" stop-color="#483010"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#0c0808"/>
+  
+  <g filter="url(#painted)">
+    <rect width="2400" height="3200" fill="#1a1210" opacity="0.5"/>
+    
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600 C 1900 2000 1500 2250 1200 2300 C 900 2250 500 2000 200 1600 Z" fill="#d0c8c0" opacity="0.7"/>
+    
+    <ellipse cx="300" cy="1600" rx="120" ry="80" fill="#a06050" opacity="0.15"/>
+    <ellipse cx="2100" cy="1600" rx="120" ry="80" fill="#a06050" opacity="0.12"/>
+    
+    <circle cx="1200" cy="1600" r="380" fill="url(#irisGrad)" opacity="0.85"/>
+    <circle cx="1200" cy="1600" r="378" fill="none" stroke="#302010" stroke-width="8" opacity="0.5"/>
+    
+    <g stroke-linecap="round" opacity="0.25">
+      <line x1="1200" y1="1280" x2="1200" y2="1220" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1280" y1="1290" x2="1320" y2="1235" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="1350" y1="1320" x2="1410" y2="1275" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1400" y1="1370" x2="1475" y2="1340" stroke="#b88020" stroke-width="1.5"/>
+      <line x1="1440" y1="1440" x2="1520" y2="1420" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1460" y1="1520" x2="1545" y2="1510" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="1460" y1="1600" x2="1580" y2="1600" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1460" y1="1680" x2="1545" y2="1690" stroke="#b88020" stroke-width="1.5"/>
+      <line x1="1440" y1="1760" x2="1520" y2="1780" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1400" y1="1830" x2="1475" y2="1860" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="1350" y1="1880" x2="1410" y2="1925" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1280" y1="1910" x2="1320" y2="1965" stroke="#b88020" stroke-width="1.5"/>
+      <line x1="1200" y1="1920" x2="1200" y2="1980" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1120" y1="1910" x2="1080" y2="1965" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="1050" y1="1880" x2="990" y2="1925" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1000" y1="1830" x2="925" y2="1860" stroke="#b88020" stroke-width="1.5"/>
+      <line x1="960" y1="1760" x2="880" y2="1780" stroke="#d0a030" stroke-width="2"/>
+      <line x1="940" y1="1680" x2="855" y2="1690" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="940" y1="1600" x2="820" y2="1600" stroke="#d0a030" stroke-width="2"/>
+      <line x1="940" y1="1520" x2="855" y2="1510" stroke="#b88020" stroke-width="1.5"/>
+      <line x1="960" y1="1440" x2="880" y2="1420" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1000" y1="1370" x2="925" y2="1340" stroke="#c89028" stroke-width="1.8"/>
+      <line x1="1050" y1="1320" x2="990" y2="1275" stroke="#d0a030" stroke-width="2"/>
+      <line x1="1120" y1="1290" x2="1080" y2="1235" stroke="#b88020" stroke-width="1.5"/>
+    </g>
+    
+    <circle cx="1200" cy="1600" r="300" fill="none" stroke="#c09028" stroke-width="3" opacity="0.15"/>
+    <circle cx="1200" cy="1600" r="250" fill="none" stroke="#d8a830" stroke-width="2" opacity="0.12"/>
+    <circle cx="1200" cy="1600" r="160" fill="none" stroke="#604020" stroke-width="15" opacity="0.2"/>
+    
+    <circle cx="1200" cy="1600" r="140" fill="#080404" opacity="0.95"/>
+    
+    <circle cx="1140" cy="1530" r="40" fill="#f8f0e8" opacity="0.6"/>
+    <circle cx="1140" cy="1530" r="25" fill="#ffffff" opacity="0.7"/>
+    <circle cx="1280" cy="1680" r="15" fill="#f0e8e0" opacity="0.3"/>
+    
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600" fill="none" stroke="#0c0808" stroke-width="25" opacity="0.4"/>
+    <path d="M 200 1600 C 500 1200 900 950 1200 900 C 1500 950 1900 1200 2200 1600" fill="none" stroke="#0c0808" stroke-width="12" opacity="0.6"/>
+    <path d="M 200 1600 C 500 2000 900 2250 1200 2300 C 1500 2250 1900 2000 2200 1600" fill="none" stroke="#181010" stroke-width="8" opacity="0.4"/>
+    
+    <g stroke="#0c0808" stroke-linecap="round" opacity="0.7" fill="none">
+      <path d="M 500 1280 C 490 1230 480 1180 470 1120" stroke-width="3"/>
+      <path d="M 600 1180 C 585 1120 570 1060 560 1000" stroke-width="3.5"/>
+      <path d="M 700 1100 C 680 1030 660 960 650 890" stroke-width="3.5"/>
+      <path d="M 820 1030 C 800 960 780 880 770 810" stroke-width="4"/>
+      <path d="M 950 980 C 930 900 910 820 905 750" stroke-width="4"/>
+      <path d="M 1080 950 C 1065 870 1050 790 1048 720" stroke-width="4"/>
+      <path d="M 1200 940 C 1195 860 1190 780 1192 700" stroke-width="3.5"/>
+      <path d="M 1320 950 C 1335 870 1350 790 1352 720" stroke-width="4"/>
+      <path d="M 1450 980 C 1470 900 1490 820 1495 750" stroke-width="4"/>
+      <path d="M 1580 1030 C 1600 960 1620 880 1630 810" stroke-width="4"/>
+      <path d="M 1700 1100 C 1720 1030 1740 960 1750 890" stroke-width="3.5"/>
+      <path d="M 1800 1180 C 1815 1120 1830 1060 1840 1000" stroke-width="3.5"/>
+      <path d="M 1900 1280 C 1910 1230 1920 1180 1930 1120" stroke-width="3"/>
+    </g>
+  </g>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+</svg>

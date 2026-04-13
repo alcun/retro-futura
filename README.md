@@ -1,22 +1,24 @@
 # Retro Futura
 
-Art print collection — 35 SVG vector originals at infinite resolution.
+Art print collection — 41 SVG vector originals at infinite resolution. Browse and preview in the gallery, download individual files for printing.
 
 ## Structure
 
-- `index.html` — Self-contained gallery site (all SVGs inlined, works offline)
-- `svg/` — Individual SVG files for printing
-
-## Printing
-
-All SVGs are 2400×3200px (3:4 ratio) and scale to any size without quality loss. Upload to any print service (Photobox, Vistaprint, etc.) for canvas or poster prints.
+- `index.html` — Self-contained gallery (all SVGs inlined as base64, works fully offline)
+- `svg/` — Individual SVG source files for printing
 
 ## Pieces
 
-**Cosmic:** Minimalist Sun, Midnight Moon, Total Eclipse, Black Hole, Supernova, Nebula, Solar System, Aurora, Full Moon
+**Cosmic:** Minimalist Sun, Midnight Moon, Total Eclipse, Black Hole, Supernova, Nebula, Solar System, Aurora, Full Moon, North Star, Lightning Strike
 
-**Biomes:** Deep Water, Desert Dunes, Mountain Range, Molten Earth, Glacier, Coral Reef, Rainforest, Misty Ridges, Mountain Sunset, Tide Pools
+**Biomes & Nature:** Deep Water, Desert Dunes, Mountain Range, Molten Earth, Glacier, Coral Reef, Rainforest, Misty Ridges, Mountain Sunset, Tide Pools, Eruption, Jellyfish
 
-**Paintable:** Colour Field, Horizon, Lone Tree, Ripples, Cairn, The Wave, Peak & Moon, Enso
+**Painterly:** Colour Field, Horizon, Lone Tree, Ripples, Cairn, The Wave, Peak & Moon, Enso
 
 **Science & Geometry:** Double Helix, Sacred Geometry, Bohr Atom, Orbital Paths, Star Chart, Topography, Pine Forest, Saturn
+
+**Portrait:** The Eye (Gold), The Eye (Blue)
+
+## Printing
+
+All SVGs are 2400×3200px (3:4 ratio) — scale to any size without quality loss. Works well as A2/A1 posters or canvas prints. Upload the individual files from `svg/` to any print service (Photobox, Vistaprint, Printed.com, etc.).

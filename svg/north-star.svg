@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="570" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="spikeGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+    <radialGradient id="halo" cx="50%" cy="45%" r="25%">
+      <stop offset="0%" stop-color="#c0b8d0" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#605880" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#0a0810" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="2400" height="3200" fill="#0a0810"/>
+  <rect width="2400" height="3200" fill="url(#halo)"/>
+  
+  <g filter="url(#painted)">
+    <!-- Wide soft glow around the star -->
+    <circle cx="1200" cy="1400" r="200" fill="#a098c0" opacity="0.03" filter="url(#starGlow)"/>
+    <circle cx="1200" cy="1400" r="120" fill="#c0b8d8" opacity="0.04" filter="url(#starGlow)"/>
+    <circle cx="1200" cy="1400" r="60" fill="#d8d0e8" opacity="0.06" filter="url(#starGlow)"/>
+    
+    <!-- DIFFRACTION SPIKES - four long lines crossing through the star -->
+    
+    <!-- Vertical spike - full height of canvas -->
+    <!-- Wide glow -->
+    <line x1="1200" y1="100" x2="1200" y2="2700" stroke="#8080a0" stroke-width="20" opacity="0.04" filter="url(#starGlow)"/>
+    <!-- Mid glow -->
+    <line x1="1200" y1="200" x2="1200" y2="2600" stroke="#a0a0c0" stroke-width="8" opacity="0.08" filter="url(#spikeGlow)"/>
+    <!-- Bright line -->
+    <line x1="1200" y1="300" x2="1200" y2="2500" stroke="#d0c8e0" stroke-width="2.5" opacity="0.35"/>
+    <!-- Hot centre section -->
+    <line x1="1200" y1="1000" x2="1200" y2="1800" stroke="#e8e0f0" stroke-width="3" opacity="0.5"/>
+    <!-- White core -->
+    <line x1="1200" y1="1200" x2="1200" y2="1600" stroke="#f8f0ff" stroke-width="2" opacity="0.65"/>
+    
+    <!-- Horizontal spike -->
+    <line x1="200" y1="1400" x2="2200" y2="1400" stroke="#8080a0" stroke-width="20" opacity="0.04" filter="url(#starGlow)"/>
+    <line x1="300" y1="1400" x2="2100" y2="1400" stroke="#a0a0c0" stroke-width="8" opacity="0.08" filter="url(#spikeGlow)"/>
+    <line x1="400" y1="1400" x2="2000" y2="1400" stroke="#d0c8e0" stroke-width="2.5" opacity="0.35"/>
+    <line x1="800" y1="1400" x2="1600" y2="1400" stroke="#e8e0f0" stroke-width="3" opacity="0.5"/>
+    <line x1="1000" y1="1400" x2="1400" y2="1400" stroke="#f8f0ff" stroke-width="2" opacity="0.65"/>
+    
+    <!-- Diagonal spike - top-left to bottom-right (shorter) -->
+    <line x1="600" y1="800" x2="1800" y2="2000" stroke="#8080a0" stroke-width="14" opacity="0.03" filter="url(#starGlow)"/>
+    <line x1="700" y1="900" x2="1700" y2="1900" stroke="#a0a0c0" stroke-width="5" opacity="0.06" filter="url(#spikeGlow)"/>
+    <line x1="800" y1="1000" x2="1600" y2="1800" stroke="#d0c8e0" stroke-width="1.8" opacity="0.25"/>
+    <line x1="1050" y1="1250" x2="1350" y2="1550" stroke="#e8e0f0" stroke-width="2" opacity="0.4"/>
+    
+    <!-- Diagonal spike - top-right to bottom-left (shorter) -->
+    <line x1="1800" y1="800" x2="600" y2="2000" stroke="#8080a0" stroke-width="14" opacity="0.03" filter="url(#starGlow)"/>
+    <line x1="1700" y1="900" x2="700" y2="1900" stroke="#a0a0c0" stroke-width="5" opacity="0.06" filter="url(#spikeGlow)"/>
+    <line x1="1600" y1="1000" x2="800" y2="1800" stroke="#d0c8e0" stroke-width="1.8" opacity="0.25"/>
+    <line x1="1350" y1="1250" x2="1050" y2="1550" stroke="#e8e0f0" stroke-width="2" opacity="0.4"/>
+    
+    <!-- THE STAR - bright central point -->
+    <circle cx="1200" cy="1400" r="18" fill="#c0b8d8" opacity="0.4" filter="url(#spikeGlow)"/>
+    <circle cx="1200" cy="1400" r="10" fill="#e0d8f0" opacity="0.7"/>
+    <circle cx="1200" cy="1400" r="5" fill="#f8f4ff" opacity="0.9"/>
+    <circle cx="1200" cy="1400" r="2.5" fill="#ffffff" opacity="1"/>
+  </g>
+  
+  <!-- Background stars - scattered, much dimmer -->
+  <circle cx="350" cy="300" r="2" fill="#a0a0b8" opacity="0.35"/>
+  <circle cx="800" cy="500" r="1.5" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="1700" cy="350" r="2.5" fill="#a0a0b8" opacity="0.4"/>
+  <circle cx="2100" cy="600" r="1.5" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="400" cy="800" r="2" fill="#a0a0b8" opacity="0.3"/>
+  <circle cx="2000" cy="900" r="1.5" fill="#a0a0b8" opacity="0.2"/>
+  <circle cx="300" cy="1900" r="2" fill="#a0a0b8" opacity="0.3"/>
+  <circle cx="700" cy="2300" r="1.5" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="1800" cy="2100" r="2" fill="#a0a0b8" opacity="0.35"/>
+  <circle cx="2200" cy="1800" r="1.5" fill="#a0a0b8" opacity="0.2"/>
+  <circle cx="500" cy="2700" r="2" fill="#a0a0b8" opacity="0.3"/>
+  <circle cx="1500" cy="2500" r="2.5" fill="#a0a0b8" opacity="0.35"/>
+  <circle cx="2000" cy="2800" r="1.5" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="200" cy="1400" r="1.5" fill="#a0a0b8" opacity="0.2"/>
+  <circle cx="900" cy="1100" r="2" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="1600" cy="700" r="1.5" fill="#a0a0b8" opacity="0.2"/>
+  <circle cx="100" cy="2400" r="2" fill="#a0a0b8" opacity="0.3"/>
+  <circle cx="2300" cy="2400" r="2" fill="#a0a0b8" opacity="0.25"/>
+  <circle cx="1100" cy="2900" r="1.5" fill="#a0a0b8" opacity="0.2"/>
+  <circle cx="1900" cy="1500" r="1.5" fill="#a0a0b8" opacity="0.15"/>
+  
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.1"/>
+</svg>
