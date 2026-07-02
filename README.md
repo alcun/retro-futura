@@ -4,6 +4,8 @@ Live at <https://retro-futura.alcun.dev>
 
 Art print collection - 41 SVG vector originals at infinite resolution. Browse and preview in the gallery, download individual files for printing.
 
+I might even get around to painting them one day. 
+
 ## Structure
 
 - `index.html` - Self-contained gallery (all SVGs inlined as base64, works fully offline)
