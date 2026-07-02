@@ -306,18 +306,15 @@
       .vg {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        margin-top: 1.25rem;
-        padding: 0.55rem 1.2rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+        width: 44px;
+        height: 44px;
         border: 1px solid rgba(212, 160, 48, 0.3);
-        border-radius: 999px;
+        border-radius: 50%;
         color: var(--a);
         background: none;
-        font-family: "Outfit", sans-serif;
-        font-size: 0.7rem;
-        font-weight: 300;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
         text-decoration: none;
         cursor: pointer;
         transition:
@@ -332,8 +329,8 @@
         color: var(--t);
       }
       .vg svg {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
       }
       :focus-visible {
         outline: 2px solid rgba(212, 160, 48, 0.6);
@@ -991,7 +988,7 @@
       ><img class="vi" id="vi" src="" alt="" />
       <div class="vt" id="vt"></div>
       <div class="vd" id="vdd"></div>
-      <a class="vg" id="vg" download href="#">
+      <a class="vg" id="vg" download href="#" aria-label="Download SVG" title="Download SVG">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -1005,8 +1002,7 @@
           <path d="M7 11l5 5 5-5" />
           <path d="M4 21h16" />
         </svg>
-        Download SVG</a
-      >
+      </a>
       <div class="vk" id="vk"></div>
     </div>
     <footer>
