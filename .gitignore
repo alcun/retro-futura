@@ -1,0 +1,6 @@
+# Local context for AI assistants - not part of the published site
+CLAUDE.md
+
+# Local scratch / OS cruft
+.DS_Store
+*.local
