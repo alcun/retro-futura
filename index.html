@@ -3,7 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>RETRO FUTURA</title>
+    <title>retro futura · svg art by alasdair cunningham</title>
+    <meta
+      name="description"
+      content="A gallery of 41 procedurally drawn SVG art prints - vector originals at infinite resolution, from cosmic voids to ocean depths."
+    />
+    <link rel="canonical" href="https://retro-futura.alcun.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Retro Futura" />
+    <meta
+      property="og:title"
+      content="retro futura · svg art by alasdair cunningham"
+    />
+    <meta
+      property="og:description"
+      content="41 procedurally drawn SVG art prints - vector originals at infinite resolution."
+    />
+    <meta property="og:url" content="https://retro-futura.alcun.dev/" />
+    <meta
+      property="og:image"
+      content="https://retro-futura.alcun.dev/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="retro futura · svg art by alasdair cunningham"
+    />
+    <meta
+      name="twitter:description"
+      content="41 procedurally drawn SVG art prints - vector originals at infinite resolution."
+    />
+    <meta
+      name="twitter:image"
+      content="https://retro-futura.alcun.dev/og-image.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Outfit:wght@200;300;400&display=swap"
       rel="stylesheet"
@@ -268,6 +303,42 @@
         letter-spacing: 0.3em;
         color: var(--d);
       }
+      .vg {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+        padding: 0.55rem 1.2rem;
+        border: 1px solid rgba(212, 160, 48, 0.3);
+        border-radius: 999px;
+        color: var(--a);
+        background: none;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          border-color 0.3s,
+          background 0.3s,
+          color 0.3s;
+      }
+      .vg:hover,
+      .vg:focus-visible {
+        border-color: var(--a);
+        background: rgba(212, 160, 48, 0.1);
+        color: var(--t);
+      }
+      .vg svg {
+        width: 14px;
+        height: 14px;
+      }
+      :focus-visible {
+        outline: 2px solid rgba(212, 160, 48, 0.6);
+        outline-offset: 3px;
+      }
       footer {
         text-align: center;
         padding: 4rem 2rem;
@@ -283,6 +354,25 @@
         margin-top: 0.5rem;
         color: var(--ad);
         font-size: 0.65rem;
+      }
+      footer .made {
+        margin-top: 1.75rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: none;
+      }
+      footer .made a {
+        color: var(--d);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(212, 160, 48, 0.2);
+        padding-bottom: 2px;
+        transition:
+          color 0.3s,
+          border-color 0.3s;
+      }
+      footer .made a:hover {
+        color: var(--a);
+        border-color: var(--a);
       }
       @keyframes fu {
         from {
@@ -339,7 +429,7 @@
       <div class="logo">Retro Futura</div>
       <div class="sub">Art Print Collection</div>
       <div class="tag">
-        Vector originals at infinite resolution — from cosmic voids to ocean
+        Vector originals at infinite resolution - from cosmic voids to ocean
         depths
       </div>
       <div class="cnt">41 pieces</div>
@@ -880,18 +970,53 @@
         </div>
       </div>
     </section>
-    <div class="v" id="v">
-      <button class="vc" onclick="cl()">&times;</button
-      ><button class="vn vp" onclick="nv(-1)">&#8249;</button
-      ><button class="vn vx" onclick="nv(1)">&#8250;</button
+    <div
+      class="v"
+      id="v"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Artwork viewer"
+    >
+      <button class="vc" id="vc" onclick="cl()" aria-label="Close viewer">
+        &times;</button
+      ><button
+        class="vn vp"
+        id="vp"
+        onclick="nv(-1)"
+        aria-label="Previous piece"
+      >
+        &#8249;</button
+      ><button class="vn vx" id="vx" onclick="nv(1)" aria-label="Next piece">
+        &#8250;</button
       ><img class="vi" id="vi" src="" alt="" />
       <div class="vt" id="vt"></div>
       <div class="vd" id="vdd"></div>
+      <a class="vg" id="vg" download href="#">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3v12" />
+          <path d="M7 11l5 5 5-5" />
+          <path d="M4 21h16" />
+        </svg>
+        Download SVG</a
+      >
       <div class="vk" id="vk"></div>
     </div>
     <footer>
       <p>Retro Futura Collection</p>
-      <p class="cr">SVG originals · Print at any size · Infinite resolution</p>
+      <p class="cr">
+        SVG originals · Download and print at any size · Infinite resolution
+      </p>
+      <p class="made">
+        <a href="https://alcun.dev">made by alasdair · alcun.dev</a>
+      </p>
     </footer>
     <script>
       const P = [
@@ -1102,37 +1227,105 @@
         },
       ];
       let c = 0;
+      let lastFocus = null;
       const v = document.getElementById("v");
-      function op(i) {
+      const vi = document.getElementById("vi");
+      const vg = document.getElementById("vg");
+      // stable slug from a piece name: "The Eye (Gold)" -> "the-eye-gold"
+      function slug(t) {
+        return t
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+      }
+      function idxOfSlug(s) {
+        for (let i = 0; i < P.length; i++) if (slug(P[i].t) === s) return i;
+        return -1;
+      }
+      function isOpen() {
+        return v.classList.contains("on");
+      }
+      function setHash(s) {
+        // replaceState keeps history clean while paging through pieces
+        history.replaceState(null, "", s ? "#" + s : location.pathname + location.search);
+      }
+      function op(i, fromHash) {
         c = i;
         u();
-        v.classList.add("on");
-        document.body.style.overflow = "hidden";
+        if (!isOpen()) {
+          lastFocus = document.activeElement;
+          v.classList.add("on");
+          document.body.style.overflow = "hidden";
+          document.getElementById("vc").focus();
+        }
+        if (!fromHash) setHash(slug(P[i].t));
       }
-      function cl() {
+      function cl(fromHash) {
+        if (!isOpen()) return;
         v.classList.remove("on");
         document.body.style.overflow = "";
+        if (!fromHash) setHash("");
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
       }
       function nv(d) {
         c = (c + d + P.length) % P.length;
         u();
+        setHash(slug(P[c].t));
       }
       function u() {
         const p = P[c];
-        document.getElementById("vi").src = p.s;
+        const s = slug(p.t);
+        vi.src = p.s;
+        vi.alt = p.t + ". " + p.d;
         document.getElementById("vt").textContent = p.t;
         document.getElementById("vdd").textContent = p.d;
         document.getElementById("vk").textContent = c + 1 + " / " + P.length;
+        vg.href = p.s;
+        vg.setAttribute("download", "retro-futura-" + s + ".svg");
       }
       document.addEventListener("keydown", (e) => {
-        if (!v.classList.contains("on")) return;
-        if (e.key === "Escape") cl();
-        if (e.key === "ArrowLeft") nv(-1);
-        if (e.key === "ArrowRight") nv(1);
+        if (!isOpen()) return;
+        if (e.key === "Escape") {
+          cl();
+        } else if (e.key === "ArrowLeft") {
+          nv(-1);
+        } else if (e.key === "ArrowRight") {
+          nv(1);
+        } else if (e.key === "Tab") {
+          // trap focus within the viewer
+          const f = [
+            document.getElementById("vc"),
+            document.getElementById("vp"),
+            document.getElementById("vx"),
+            vg,
+          ];
+          const first = f[0];
+          const last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          } else if (!f.includes(document.activeElement)) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       });
       v.addEventListener("click", (e) => {
         if (e.target === v) cl();
       });
+      // permalinks: a #slug in the URL opens that piece directly
+      window.addEventListener("hashchange", () => {
+        const i = idxOfSlug(location.hash.slice(1));
+        if (i >= 0) op(i, true);
+        else cl(true);
+      });
+      (function () {
+        const i = idxOfSlug(location.hash.slice(1));
+        if (i >= 0) op(i, true);
+      })();
     </script>
   </body>
 </html>
