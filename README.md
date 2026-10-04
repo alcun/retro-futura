@@ -2,7 +2,7 @@
 
 Live at <https://retro-futura.alcun.dev>
 
-Art print collection - 41 SVG prints you can print at any size. Browse and preview in the gallery, download individual files for printing.
+Art print collection - 45 SVG prints you can print at any size. Browse and preview in the gallery, download individual files for printing.
 
 I might even get around to painting them one day. 
 
@@ -18,7 +18,7 @@ I might even get around to painting them one day.
 
 **Biomes & Nature:** Deep Water, Desert Dunes, Mountain Range, Molten Earth, Glacier, Coral Reef, Rainforest, Misty Ridges, Mountain Sunset, Tide Pools, Eruption, Jellyfish
 
-**Painterly:** Colour Field, Horizon, Lone Tree, Ripples, Cairn, The Wave, Peak & Moon, Enso
+**Painterly:** Colour Field, Horizon, Lone Tree, Ripples, Cairn, The Wave, Peak & Moon, Enso, Low Sun, Ember, Hills, Tide
 
 **Science & Geometry:** Double Helix, Sacred Geometry, Bohr Atom, Orbital Paths, Star Chart, Topography, Pine Forest, Saturn
 
