@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
+  <defs>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="92" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+  </defs>
+
+  <rect width="2400" height="3200" fill="#070b16"/>
+  <circle cx="1650" cy="420" r="260" fill="#dfe3ea" opacity="0.18" filter="url(#soft)"/>
+  <g filter="url(#painted)">
+    <circle cx="1650" cy="420" r="120" fill="#e8e6dc"/>
+    <path d="M -200 752 C 150 752 150 764 500 764 C 850 764 850 793 1200 793 C 1550 793 1550 731 1900 731 C 2250 731 2250 735 2600 735 L 2600 3400 L -200 3400 Z" fill="#0a1020"/>
+    <path d="M -200 752 C 150 752 150 764 500 764 C 850 764 850 793 1200 793 C 1550 793 1550 731 1900 731 C 2250 731 2250 735 2600 735" fill="none" stroke="#c9d2de" stroke-width="3.0" opacity="0.12"/>
+    <path d="M -200 988 C 150 988 150 995 500 995 C 850 995 850 986 1200 986 C 1550 986 1550 999 1900 999 C 2250 999 2250 1031 2600 1031 L 2600 3400 L -200 3400 Z" fill="#0d1528"/>
+    <path d="M -200 988 C 150 988 150 995 500 995 C 850 995 850 986 1200 986 C 1550 986 1550 999 1900 999 C 2250 999 2250 1031 2600 1031" fill="none" stroke="#c9d2de" stroke-width="3.9" opacity="0.18"/>
+    <path d="M -200 1344 C 150 1344 150 1317 500 1317 C 850 1317 850 1289 1200 1289 C 1550 1289 1550 1291 1900 1291 C 2250 1291 2250 1317 2600 1317 L 2600 3400 L -200 3400 Z" fill="#111b31"/>
+    <path d="M -200 1344 C 150 1344 150 1317 500 1317 C 850 1317 850 1289 1200 1289 C 1550 1289 1550 1291 1900 1291 C 2250 1291 2250 1317 2600 1317" fill="none" stroke="#c9d2de" stroke-width="4.7" opacity="0.24"/>
+    <path d="M -200 1554 C 150 1554 150 1532 500 1532 C 850 1532 850 1601 1200 1601 C 1550 1601 1550 1581 1900 1581 C 2250 1581 2250 1535 2600 1535 L 2600 3400 L -200 3400 Z" fill="#15223a"/>
+    <path d="M -200 1554 C 150 1554 150 1532 500 1532 C 850 1532 850 1601 1200 1601 C 1550 1601 1550 1581 1900 1581 C 2250 1581 2250 1535 2600 1535" fill="none" stroke="#c9d2de" stroke-width="5.6" opacity="0.30"/>
+    <path d="M -200 1801 C 150 1801 150 1804 500 1804 C 850 1804 850 1881 1200 1881 C 1550 1881 1550 1805 1900 1805 C 2250 1805 2250 1851 2600 1851 L 2600 3400 L -200 3400 Z" fill="#1a2a44"/>
+    <path d="M -200 1801 C 150 1801 150 1804 500 1804 C 850 1804 850 1881 1200 1881 C 1550 1881 1550 1805 1900 1805 C 2250 1805 2250 1851 2600 1851" fill="none" stroke="#c9d2de" stroke-width="6.4" opacity="0.37"/>
+    <path d="M -200 2152 C 150 2152 150 2068 500 2068 C 850 2068 850 2100 1200 2100 C 1550 2100 1550 2108 1900 2108 C 2250 2108 2250 2148 2600 2148 L 2600 3400 L -200 3400 Z" fill="#20334e"/>
+    <path d="M -200 2152 C 150 2152 150 2068 500 2068 C 850 2068 850 2100 1200 2100 C 1550 2100 1550 2108 1900 2108 C 2250 2108 2250 2148 2600 2148" fill="none" stroke="#c9d2de" stroke-width="7.3" opacity="0.43"/>
+    <path d="M -200 2352 C 150 2352 150 2358 500 2358 C 850 2358 850 2357 1200 2357 C 1550 2357 1550 2339 1900 2339 C 2250 2339 2250 2396 2600 2396 L 2600 3400 L -200 3400 Z" fill="#273d59"/>
+    <path d="M -200 2352 C 150 2352 150 2358 500 2358 C 850 2358 850 2357 1200 2357 C 1550 2357 1550 2339 1900 2339 C 2250 2339 2250 2396 2600 2396" fill="none" stroke="#c9d2de" stroke-width="8.1" opacity="0.49"/>
+    <path d="M -200 2679 C 150 2679 150 2644 500 2644 C 850 2644 850 2608 1200 2608 C 1550 2608 1550 2669 1900 2669 C 2250 2669 2250 2671 2600 2671 L 2600 3400 L -200 3400 Z" fill="#2f4864"/>
+    <path d="M -200 2679 C 150 2679 150 2644 500 2644 C 850 2644 850 2608 1200 2608 C 1550 2608 1550 2669 1900 2669 C 2250 2669 2250 2671 2600 2671" fill="none" stroke="#c9d2de" stroke-width="9.0" opacity="0.55"/>
+    <path d="M -200 2877 C 150 2877 150 2841 500 2841 C 850 2841 850 2896 1200 2896 C 1550 2896 1550 2874 1900 2874 C 2250 2874 2250 2870 2600 2870 L 2600 3400 L -200 3400 Z" fill="#3c3d45"/>
+    <path d="M -200 2877 C 150 2877 150 2841 500 2841 C 850 2841 850 2896 1200 2896 C 1550 2896 1550 2874 1900 2874 C 2250 2874 2250 2870 2600 2870" fill="none" stroke="#e8ecf0" stroke-width="14" opacity="0.7"/>
+    <rect x="1542" y="900" width="220" height="14" rx="7" fill="#e8e6dc" opacity="0.60"/>
+    <rect x="1549" y="1080" width="170" height="14" rx="7" fill="#e8e6dc" opacity="0.54"/>
+    <rect x="1517" y="1290" width="260" height="14" rx="7" fill="#e8e6dc" opacity="0.48"/>
+    <rect x="1598" y="1520" width="140" height="14" rx="7" fill="#e8e6dc" opacity="0.42"/>
+    <rect x="1561" y="1780" width="200" height="14" rx="7" fill="#e8e6dc" opacity="0.36"/>
+    <rect x="1586" y="2060" width="110" height="14" rx="7" fill="#e8e6dc" opacity="0.30"/>
+    <rect x="1594" y="2380" width="150" height="14" rx="7" fill="#e8e6dc" opacity="0.24"/>
+  </g>
+
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
+</svg>
