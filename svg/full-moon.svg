@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 3200" width="2400" height="3200">
   <defs>
-    <filter id="painted" x="-3%" y="-3%" width="106%" height="106%">
-      <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="3" seed="350" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    <filter id="painted" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="turbulence" baseFrequency="0.012" numOctaves="3" seed="350" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
-    <filter id="moonGlow">
-      <feGaussianBlur stdDeviation="20" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40"/>
     </filter>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
@@ -17,67 +16,30 @@
       </feComponentTransfer>
       <feBlend in="SourceGraphic" mode="normal"/>
     </filter>
-    <radialGradient id="moonFace" cx="45%" cy="42%" r="55%">
-      <stop offset="0%" stop-color="#f0ece0"/>
-      <stop offset="50%" stop-color="#e0d8c8"/>
-      <stop offset="100%" stop-color="#c8c0b0"/>
-    </radialGradient>
-    <radialGradient id="halo" cx="50%" cy="42%" r="40%">
-      <stop offset="0%" stop-color="#c0b8a8" stop-opacity="0.08"/>
-      <stop offset="50%" stop-color="#808070" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#1a1828" stop-opacity="0"/>
-    </radialGradient>
   </defs>
-  
-  <rect width="2400" height="3200" fill="#0c0e18"/>
-  <rect width="2400" height="3200" fill="url(#halo)"/>
-  
+
+  <rect width="2400" height="3200" fill="#0b1220"/>
   <g filter="url(#painted)">
-    <!-- Moon glow -->
-    <circle cx="1200" cy="1350" r="550" fill="#a0988a" opacity="0.04" filter="url(#moonGlow)"/>
-    <circle cx="1200" cy="1350" r="480" fill="#b0a898" opacity="0.05" filter="url(#moonGlow)"/>
-    
-    <!-- Moon body -->
-    <circle cx="1200" cy="1350" r="420" fill="url(#moonFace)"/>
-    
-    <!-- Mare/dark patches - the "face" of the moon -->
-    <ellipse cx="1100" cy="1200" rx="120" ry="100" fill="#b0a898" opacity="0.3"/>
-    <ellipse cx="1300" cy="1250" rx="80" ry="90" fill="#b8b0a0" opacity="0.25"/>
-    <ellipse cx="1150" cy="1400" rx="150" ry="80" fill="#b0a898" opacity="0.25"/>
-    <ellipse cx="1050" cy="1300" rx="60" ry="70" fill="#a8a090" opacity="0.2"/>
-    <ellipse cx="1320" cy="1450" rx="90" ry="60" fill="#b8b0a0" opacity="0.2"/>
-    <ellipse cx="1250" cy="1150" rx="50" ry="45" fill="#a8a090" opacity="0.18"/>
-    
-    <!-- Subtle crater circles -->
-    <circle cx="1350" cy="1180" r="25" fill="none" stroke="#a8a090" stroke-width="2" opacity="0.15"/>
-    <circle cx="1050" cy="1500" r="30" fill="none" stroke="#a8a090" stroke-width="2" opacity="0.12"/>
-    <circle cx="1300" cy="1550" r="20" fill="none" stroke="#a8a090" stroke-width="1.5" opacity="0.12"/>
-    <circle cx="1400" cy="1350" r="18" fill="none" stroke="#a8a090" stroke-width="1.5" opacity="0.1"/>
-    <circle cx="950" cy="1250" r="22" fill="none" stroke="#a8a090" stroke-width="1.5" opacity="0.12"/>
-    <circle cx="1150" cy="1550" r="15" fill="none" stroke="#a8a090" stroke-width="1.5" opacity="0.1"/>
-    
-    <!-- Bright limb highlight -->
-    <circle cx="1200" cy="1350" r="418" fill="none" stroke="#e8e0d0" stroke-width="3" opacity="0.15"/>
+    <path d="M 2469 1450 C 2473 1662 2419 1913 2311 2091 C 2202 2269 2002 2416 1817 2519 C 1632 2622 1409 2703 1200 2708 C 991 2714 750 2656 562 2555 C 374 2454 178 2285 73 2101 C -32 1917 -79 1661 -68 1450 C -58 1239 31 1018 138 837 C 244 655 395 473 572 363 C 749 253 989 181 1200 178 C 1411 174 1660 232 1841 340 C 2023 447 2184 636 2289 821 C 2393 1006 2466 1238 2469 1450 Z" fill="#0e1729"/>
+    <path d="M 2337 1450 C 2341 1635 2271 1854 2173 2011 C 2074 2169 1908 2301 1746 2396 C 1584 2492 1384 2582 1200 2585 C 1016 2588 809 2507 643 2414 C 477 2321 297 2187 203 2026 C 108 1865 69 1637 77 1450 C 86 1263 159 1065 252 903 C 345 740 478 572 636 474 C 794 375 1012 312 1200 312 C 1388 311 1607 373 1765 471 C 1924 569 2056 738 2151 901 C 2247 1064 2334 1265 2337 1450 Z" fill="#121d33"/>
+    <path d="M 2337 1450 C 2341 1635 2271 1854 2173 2011 C 2074 2169 1908 2301 1746 2396 C 1584 2492 1384 2582 1200 2585 C 1016 2588 809 2507 643 2414 C 477 2321 297 2187 203 2026 C 108 1865 69 1637 77 1450 C 86 1263 159 1065 252 903 C 345 740 478 572 636 474 C 794 375 1012 312 1200 312 C 1388 311 1607 373 1765 471 C 1924 569 2056 738 2151 901 C 2247 1064 2334 1265 2337 1450 Z" fill="none" stroke="#dfe2e6" stroke-width="4" opacity="0.10"/>
+    <path d="M 2199 1450 C 2205 1614 2155 1814 2067 1951 C 1980 2088 1820 2193 1676 2274 C 1531 2354 1362 2429 1200 2435 C 1038 2440 848 2390 704 2309 C 560 2229 416 2092 335 1949 C 255 1806 210 1611 219 1450 C 228 1289 306 1122 389 982 C 471 841 578 694 714 607 C 849 521 1036 464 1200 461 C 1364 458 1558 505 1697 589 C 1836 674 1950 825 2033 969 C 2117 1112 2193 1286 2199 1450 Z" fill="#17243d"/>
+    <path d="M 2199 1450 C 2205 1614 2155 1814 2067 1951 C 1980 2088 1820 2193 1676 2274 C 1531 2354 1362 2429 1200 2435 C 1038 2440 848 2390 704 2309 C 560 2229 416 2092 335 1949 C 255 1806 210 1611 219 1450 C 228 1289 306 1122 389 982 C 471 841 578 694 714 607 C 849 521 1036 464 1200 461 C 1364 458 1558 505 1697 589 C 1836 674 1950 825 2033 969 C 2117 1112 2193 1286 2199 1450 Z" fill="none" stroke="#dfe2e6" stroke-width="5" opacity="0.14"/>
+    <path d="M 2055 1450 C 2058 1589 2006 1753 1932 1873 C 1859 1992 1736 2097 1614 2167 C 1492 2236 1338 2288 1200 2288 C 1062 2288 911 2234 786 2167 C 661 2099 522 2002 451 1883 C 380 1763 352 1589 361 1450 C 370 1311 434 1169 504 1048 C 574 928 667 799 783 727 C 899 655 1059 619 1200 615 C 1341 612 1511 635 1630 705 C 1750 775 1846 912 1916 1036 C 1987 1161 2052 1311 2055 1450 Z" fill="#1d2c47"/>
+    <path d="M 2055 1450 C 2058 1589 2006 1753 1932 1873 C 1859 1992 1736 2097 1614 2167 C 1492 2236 1338 2288 1200 2288 C 1062 2288 911 2234 786 2167 C 661 2099 522 2002 451 1883 C 380 1763 352 1589 361 1450 C 370 1311 434 1169 504 1048 C 574 928 667 799 783 727 C 899 655 1059 619 1200 615 C 1341 612 1511 635 1630 705 C 1750 775 1846 912 1916 1036 C 1987 1161 2052 1311 2055 1450 Z" fill="none" stroke="#dfe2e6" stroke-width="6" opacity="0.18"/>
+    <path d="M 1906 1450 C 1908 1566 1872 1703 1812 1803 C 1752 1904 1650 1997 1548 2053 C 1446 2109 1315 2139 1200 2138 C 1085 2137 959 2101 856 2046 C 752 1991 639 1907 580 1808 C 521 1709 496 1566 501 1450 C 507 1334 556 1213 614 1112 C 672 1011 752 903 850 843 C 947 783 1082 751 1200 750 C 1318 748 1457 774 1556 833 C 1656 892 1740 1002 1798 1105 C 1856 1208 1903 1334 1906 1450 Z" fill="#243552"/>
+    <path d="M 1906 1450 C 1908 1566 1872 1703 1812 1803 C 1752 1904 1650 1997 1548 2053 C 1446 2109 1315 2139 1200 2138 C 1085 2137 959 2101 856 2046 C 752 1991 639 1907 580 1808 C 521 1709 496 1566 501 1450 C 507 1334 556 1213 614 1112 C 672 1011 752 903 850 843 C 947 783 1082 751 1200 750 C 1318 748 1457 774 1556 833 C 1656 892 1740 1002 1798 1105 C 1856 1208 1903 1334 1906 1450 Z" fill="none" stroke="#dfe2e6" stroke-width="7" opacity="0.22"/>
+    <path d="M 1757 1450 C 1761 1542 1736 1652 1689 1732 C 1642 1812 1559 1886 1477 1931 C 1396 1975 1293 1997 1200 1998 C 1107 1999 1002 1980 919 1936 C 837 1892 752 1817 705 1736 C 657 1655 631 1543 635 1450 C 639 1357 681 1258 728 1178 C 776 1097 842 1012 920 966 C 999 919 1106 899 1200 898 C 1294 896 1407 909 1485 956 C 1564 1003 1624 1097 1669 1179 C 1714 1262 1754 1358 1757 1450 Z" fill="#2d405e"/>
+    <path d="M 1757 1450 C 1761 1542 1736 1652 1689 1732 C 1642 1812 1559 1886 1477 1931 C 1396 1975 1293 1997 1200 1998 C 1107 1999 1002 1980 919 1936 C 837 1892 752 1817 705 1736 C 657 1655 631 1543 635 1450 C 639 1357 681 1258 728 1178 C 776 1097 842 1012 920 966 C 999 919 1106 899 1200 898 C 1294 896 1407 909 1485 956 C 1564 1003 1624 1097 1669 1179 C 1714 1262 1754 1358 1757 1450 Z" fill="none" stroke="#dfe2e6" stroke-width="8" opacity="0.26"/>
   </g>
-  
-  <!-- Stars -->
-  <circle cx="250" cy="250" r="2.5" fill="#c0c8d8" opacity="0.55"/>
-  <circle cx="600" cy="400" r="2" fill="#c0c8d8" opacity="0.4"/>
-  <circle cx="1800" cy="300" r="2.5" fill="#c0c8d8" opacity="0.5"/>
-  <circle cx="2200" cy="500" r="2" fill="#c0c8d8" opacity="0.4"/>
-  <circle cx="400" cy="700" r="1.5" fill="#c0c8d8" opacity="0.35"/>
-  <circle cx="2000" cy="650" r="2" fill="#c0c8d8" opacity="0.35"/>
-  <circle cx="300" cy="2200" r="2.5" fill="#c0c8d8" opacity="0.5"/>
-  <circle cx="700" cy="2400" r="2" fill="#c0c8d8" opacity="0.4"/>
-  <circle cx="1700" cy="2300" r="2.5" fill="#c0c8d8" opacity="0.5"/>
-  <circle cx="2100" cy="2100" r="2" fill="#c0c8d8" opacity="0.4"/>
-  <circle cx="500" cy="2700" r="1.5" fill="#c0c8d8" opacity="0.35"/>
-  <circle cx="1900" cy="2600" r="2" fill="#c0c8d8" opacity="0.35"/>
-  <circle cx="1200" cy="2800" r="2.5" fill="#c0c8d8" opacity="0.45"/>
-  <circle cx="100" cy="1500" r="1.5" fill="#c0c8d8" opacity="0.3"/>
-  <circle cx="2300" cy="1200" r="2" fill="#c0c8d8" opacity="0.35"/>
-  <circle cx="150" cy="3000" r="2" fill="#c0c8d8" opacity="0.4"/>
-  <circle cx="2200" cy="2800" r="1.5" fill="#c0c8d8" opacity="0.3"/>
-  
-  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.15"/>
+  <circle cx="1200" cy="1450" r="640" fill="#e9e2cf" opacity="0.18" filter="url(#soft)"/>
+  <g filter="url(#painted)">
+    <circle cx="1200" cy="1450" r="480" fill="#ece5d2"/>
+    <path d="M 1257 1300 C 1257 1322 1234 1349 1211 1367 C 1188 1386 1154 1402 1118 1411 C 1083 1419 1033 1425 997 1418 C 962 1411 929 1389 906 1369 C 883 1349 859 1323 859 1300 C 859 1277 885 1252 908 1232 C 931 1212 962 1189 997 1181 C 1032 1174 1083 1180 1119 1188 C 1154 1197 1187 1214 1210 1233 C 1233 1251 1257 1278 1257 1300 Z" fill="#ddd5c0"/>
+    <path d="M 1395 1380 C 1394 1404 1389 1431 1377 1449 C 1365 1468 1343 1483 1323 1490 C 1303 1497 1277 1499 1257 1492 C 1237 1486 1214 1470 1201 1451 C 1188 1432 1180 1404 1180 1380 C 1180 1356 1186 1327 1199 1307 C 1211 1288 1235 1269 1255 1263 C 1276 1256 1302 1260 1323 1268 C 1344 1275 1370 1287 1382 1306 C 1394 1325 1396 1356 1395 1380 Z" fill="#ddd5c0"/>
+    <path d="M 1311 1560 C 1312 1576 1306 1597 1286 1610 C 1267 1622 1227 1632 1194 1637 C 1160 1642 1117 1645 1084 1641 C 1051 1636 1016 1623 994 1610 C 972 1596 953 1576 953 1560 C 954 1544 976 1525 998 1512 C 1020 1499 1053 1490 1087 1484 C 1120 1478 1166 1472 1198 1476 C 1230 1481 1261 1499 1280 1512 C 1299 1526 1310 1544 1311 1560 Z" fill="#ddd5c0"/>
+    <path d="M 1432 1620 C 1432 1634 1423 1649 1415 1660 C 1406 1671 1394 1681 1381 1686 C 1369 1690 1351 1691 1338 1687 C 1325 1683 1312 1672 1304 1661 C 1295 1650 1288 1634 1288 1620 C 1288 1606 1296 1591 1305 1580 C 1313 1569 1326 1560 1339 1555 C 1352 1550 1369 1547 1383 1551 C 1396 1555 1409 1567 1417 1578 C 1426 1590 1432 1606 1432 1620 Z" fill="#ddd5c0"/>
+  </g>
+
+  <rect width="2400" height="3200" filter="url(#grain)" opacity="0.18"/>
 </svg>

@@ -2,6 +2,11 @@
 
 ## 2026-10-05
 
+### Changed
+
+- Full Moon, Lone Tree and Saturn redrawn: flat bands and simple shapes
+  instead of detail.
+
 ### Added
 
 - Seven more in the same style: Dusk Tide, Night Tide, Strata, Island,
